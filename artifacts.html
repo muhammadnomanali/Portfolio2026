@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Artifacts - Noman Ali</title>
+    <meta name="description" content="Noman Ali's portfolio artifacts, design work, and projects." />
+
+    <style>
+         :root {
+            --bg: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-gray: #666666;
+            --text-light: #999999;
+            --brand: #16a34a;
+            --border-color: #e5e5e5;
+            --card-bg: #f9f9f9;
+            --radius: 12px;
+            --max-width: 1200px;
+            --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        html {
+            overflow-x: hidden;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            width: 100%;
+        }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-dark);
+            background-color: var(--bg);
+            line-height: 1.6;
+            position: relative;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .skip-link {
+            position: absolute;
+            left: -999px;
+        }
+        
+        .skip-link:focus {
+            left: 16px;
+            top: 16px;
+        }
+        /* Header */
+        
+        header {
+            border-bottom: 1px solid #1f4a4a;
+            background-color: #2d5a5a;
+            padding: 20px 0;
+        }
+        
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .brand {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+            white-space: nowrap;
+        }
+        
+        .links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        
+        .links a {
+            font-size: 14px;
+            color: #d1d5db;
+            transition: color 0.2s;
+        }
+        
+        .links a:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        /* Main content */
+        
+        main {
+            flex: 1;
+        }
+        /* Hero Section */
+        
+        .artifacts-hero {
+            background: linear-gradient(135deg, #153737 0%, #1a4d46 100%);
+            padding: 60px 20px;
+        }
+        
+        .artifacts-hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin: 20px 0 16px 0;
+            color: #f8fcfb;
+            font-family: Georgia, serif;
+        }
+        
+        .artifacts-hero p {
+            font-size: 18px;
+            max-width: 700px;
+            line-height: 1.7;
+            color: #acd2cc;
+        }
+        /* Breadcrumb */
+        
+        .breadcrumb {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            color: #acd2cc;
+        }
+        
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        
+        .breadcrumb .separator {
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .breadcrumb .current {
+            color: #ffffff;
+            font-weight: 600;
+        }
+        /* Artifacts Section */
+        
+        .artifacts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .artifact-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid var(--border-color);
+        }
+        
+        .artifact-card:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .artifact-card:hover .artifact-image img {
+            transform: scale(1.05);
+        }
+        
+        .artifact-image {
+            width: 100%;
+            height: 200px;
+            background: #f0f0f0;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .artifact-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.3s ease;
+        }
+        
+        .artifact-content {
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex: 1;
+        }
+        
+        .artifact-tag {
+            display: inline-block;
+            background: #d4f4f1;
+            color: var(--brand);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            width: fit-content;
+            letter-spacing: 0.3px;
+        }
+        
+        .artifact-content h3 {
+            font-size: 20px;
+            margin: 0;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-family: Georgia, serif;
+        }
+        
+        .artifact-content p {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin: 0;
+            flex: 1;
+            line-height: 1.6;
+        }
+        
+        .artifact-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--brand);
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+        
+        .artifact-link svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+        
+        .artifact-card:hover .artifact-link svg {
+            transform: translateX(4px);
+        }
+        
+        @media (max-width: 1024px) {
+            .artifacts-grid {
+                padding: 60px 24px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .artifacts-hero {
+                padding: 60px 0;
+            }
+            .artifacts-hero h1 {
+                font-size: 32px;
+            }
+            .artifacts-hero p {
+                font-size: 16px;
+            }
+            .breadcrumb {
+                font-size: 13px;
+                margin-bottom: 20px;
+            }
+            .artifacts-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                padding: 60px 20px;
+            }
+            .artifact-card {
+                padding: 24px;
+            }
+            .artifact-card h3 {
+                font-size: 18px;
+            }
+            .artifact-card p {
+                font-size: 13px;
+            }
+            .links {
+                gap: 15px;
+                font-size: 13px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+            .nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .links {
+                width: 100%;
+                justify-content: flex-start;
+                gap: 20px;
+            }
+            .artifacts-hero {
+                padding: 40px 0;
+            }
+            .artifacts-hero h1 {
+                font-size: 28px;
+            }
+            .artifacts-hero p {
+                font-size: 14px;
+            }
+            .breadcrumb {
+                font-size: 12px;
+                margin-bottom: 16px;
+            }
+            .artifacts-grid {
+                grid-template-columns: 1fr;
+                padding: 40px 16px;
+                gap: 16px;
+            }
+            .artifact-card {
+                padding: 20px;
+            }
+            .artifact-card h3 {
+                font-size: 16px;
+            }
+            footer .container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        /* Footer */
+        
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 30px 0;
+            background-color: var(--card-bg);
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+        
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        footer a {
+            color: var(--text-gray);
+            transition: color 0.2s;
+        }
+        
+        footer a:hover {
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+        /* Responsive */
+        
+        @media (max-width: 768px) {
+            .links {
+                gap: 15px;
+                font-size: 13px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            footer .container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Hero Section -->
+        <div class="artifacts-hero">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="Index.html">Home</a>
+                    <span class="separator">/</span>
+                    <span class="current">Artifacts</span>
+                </nav>
+                <h1>Artifacts</h1>
+                <p>Projects demonstrating technical communication, design, and web development skills across various domains.</p>
+            </div>
+        </div>
+
+        <!-- Artifacts Grid -->
+        <section class="artifacts-grid">
+            <a href="car-safety-infographic.html" class="artifact-card">
+                <div class="artifact-image">
+                    <img src="Artifacts&Research/image-3.jpeg" alt="Car Safety Infographic" />
+                </div>
+                <div class="artifact-content">
+                    <span class="artifact-tag">Infographic</span>
+                    <h3>Car Safety Infographic</h3>
+                    <p>Visual guide explaining vehicle structural safety for informed car buying decisions. Applied information design principles to translate complex engineering concepts.</p>
+                    <div class="artifact-link">
+                        View Project
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                </div>
+            </a>
+
+            <a href="recipe-book.html" class="artifact-card">
+                <div class="artifact-image">
+                    <img src="Artifacts&Research/image-1.jpeg" alt="Car Safety Infographic" />
+                </div>
+                <div class="artifact-content">
+                    <span class="artifact-tag">Editing</span>
+                    <h3>Recipe Book Technical Editing</h3>
+                    <p>Technical editing of 'Culinary Chronicles' focused on improving clarity, consistency, and usability.</p>
+                    <div class="artifact-link">
+                        View Project
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                </div>
+            </a>
+
+            <a href="A-Z-Events.html" class="artifact-card">
+                <div class="artifact-image">
+                    <img src="Artifacts&Research/image-2.jpeg" alt="Car Safety Infographic" />
+                </div>
+                <div class="artifact-content">
+                    <span class="artifact-tag">Web Dev</span>
+                    <h3>A-Z Events Website</h3>
+                    <p>Full lifecycle website design and development for an event planning business, from requirements to deployment.</p>
+                    <div class="artifact-link">
+                        View Project
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                </div>
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="templates/load-templates.js"></script>
+</body>
+
+</html>

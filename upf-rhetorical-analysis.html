@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UPF Rhetorical Analysis - Noman Ali</title>
+    <meta name="description" content="Rhetorical analysis research paper." />
+
+    <style>
+         :root {
+            --bg: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-gray: #666666;
+            --text-light: #999999;
+            --brand: #16a34a;
+            --border-color: #e5e5e5;
+            --card-bg: #f9f9f9;
+            --radius: 12px;
+            --max-width: 1200px;
+            --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        html {
+            overflow-x: hidden;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            width: 100%;
+        }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-dark);
+            background-color: var(--bg);
+            line-height: 1.6;
+            position: relative;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .skip-link {
+            position: absolute;
+            left: -999px;
+        }
+        
+        .skip-link:focus {
+            left: 16px;
+            top: 16px;
+        }
+        /* Header */
+        
+        header {
+            border-bottom: 1px solid #1f4a4a;
+            background-color: #2d5a5a;
+            padding: 20px 0;
+        }
+        
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .brand {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+            white-space: nowrap;
+        }
+        
+        .links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        
+        .links a {
+            font-size: 14px;
+            color: #d1d5db;
+            transition: color 0.2s;
+        }
+        
+        .links a:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        /* Main content */
+        
+        main {
+            flex: 1;
+        }
+        /* Hero Section */
+        
+        .project-hero {
+            background: linear-gradient(135deg, #153737 0%, #1a4d46 100%);
+            padding: 60px 20px;
+        }
+        
+        .project-hero .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .project-breadcrumb {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            color: rgba(172, 210, 204, 0.8);
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .project-breadcrumb a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s ease;
+        }
+        
+        .project-breadcrumb a:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        
+        .project-breadcrumb .separator {
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .project-breadcrumb .current {
+            color: #ffffff;
+            font-weight: 600;
+        }
+        
+        .project-tag {
+            display: inline-block;
+            background: rgba(41, 163, 147, 0.3);
+            color: rgb(168, 240, 230);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            border: 1px solid rgba(41, 163, 147, 0.5);
+            margin-bottom: 16px;
+        }
+        
+        .project-hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+            color: rgb(248, 252, 251);
+            font-family: Georgia, serif;
+        }
+        
+        .project-hero p {
+            font-size: 18px;
+            max-width: 700px;
+            line-height: 1.7;
+            color: rgb(172, 210, 204);
+            margin: 0;
+        }
+        /* Main Content Section */
+        
+        .project-main {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-gray);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            transition: color 0.3s ease;
+        }
+        
+        .back-button:hover {
+            color: var(--brand);
+            text-decoration: none;
+        }
+        
+        .back-button svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+        
+        .back-button:hover svg {
+            transform: translateX(-4px);
+        }
+        
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .article-intro {
+            font-size: 18px;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+        
+        .project-image {
+            width: 100%;
+            border-radius: 12px;
+            margin: 40px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-section {
+            margin: 60px 0;
+        }
+        
+        .project-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+            color: var(--text-dark);
+            font-family: Georgia, serif;
+        }
+        
+        .project-section p {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin: 0 0 16px 0;
+        }
+        /* Key Concepts Grid */
+        
+        .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .concept-card {
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .concept-card h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+            color: var(--text-dark);
+        }
+        
+        .concept-card p {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin: 0;
+            line-height: 1.6;
+        }
+        /* Design Process List */
+        
+        .process-list {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+        
+        .process-list li {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+        
+        .process-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            border-radius: 50%;
+            background: rgba(22, 163, 74, 0.1);
+            color: var(--brand);
+            font-size: 12px;
+            font-weight: 600;
+        }
+        /* Skills Tags */
+        
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0;
+        }
+        
+        .skill-pill {
+            padding: 8px 14px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+        }
+        /* CTA Card */
+        
+        .cta-card {
+            background: rgba(22, 163, 74, 0.05);
+            border: 1px solid rgba(22, 163, 74, 0.2);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 60px 0;
+        }
+        
+        .cta-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 0 16px 0;
+            color: var(--text-dark);
+        }
+        
+        .cta-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--brand);
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .cta-link:hover {
+            color: #15923f;
+            text-decoration: none;
+        }
+        
+        .cta-link svg {
+            width: 20px;
+            height: 20px;
+        }
+        
+        @media (max-width: 1024px) {
+            .project-main {
+                padding: 60px 24px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .project-hero {
+                padding: 60px 0;
+            }
+            .project-hero h1 {
+                font-size: 32px;
+            }
+            .project-hero p {
+                font-size: 16px;
+            }
+            .breadcrumb {
+                font-size: 13px;
+            }
+            .project-main {
+                padding: 60px 20px;
+            }
+            .project-section h2 {
+                font-size: 26px;
+            }
+            .project-section h3 {
+                font-size: 18px;
+            }
+            .image-wrapper {
+                margin: 32px 0;
+            }
+            .concepts-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .concept-card {
+                padding: 24px;
+            }
+            .tag-list {
+                gap: 8px;
+            }
+            .tag {
+                font-size: 11px;
+                padding: 6px 12px;
+            }
+            .links {
+                gap: 15px;
+                font-size: 13px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+            .nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .links {
+                width: 100%;
+                justify-content: flex-start;
+                gap: 20px;
+            }
+            .project-hero {
+                padding: 40px 0;
+            }
+            .project-hero h1 {
+                font-size: 28px;
+            }
+            .project-hero .subtitle {
+                font-size: 14px;
+            }
+            .breadcrumb {
+                font-size: 12px;
+                margin-bottom: 16px;
+            }
+            .project-main {
+                padding: 40px 16px;
+            }
+            .project-section {
+                margin-bottom: 40px;
+            }
+            .project-section h2 {
+                font-size: 22px;
+                margin-bottom: 16px;
+            }
+            .project-section h3 {
+                font-size: 16px;
+            }
+            .project-section p,
+            .project-section li {
+                font-size: 14px;
+            }
+            .image-wrapper {
+                margin: 24px 0;
+            }
+            .concept-card {
+                padding: 20px;
+            }
+            .concept-card h3 {
+                font-size: 16px;
+            }
+            .concept-card p {
+                font-size: 13px;
+            }
+            .tag {
+                font-size: 10px;
+                padding: 5px 10px;
+            }
+            .btn-outline {
+                width: 100%;
+                justify-content: center;
+            }
+            footer .container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        /* Footer */
+        
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 30px 0;
+            background-color: var(--card-bg);
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+        
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        footer a {
+            color: var(--text-gray);
+            transition: color 0.2s;
+        }
+        
+        footer a:hover {
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+        <div style="background: linear-gradient(135deg, rgb(21, 55, 55) 0%, rgb(26, 77, 70) 100%); padding: 60px 20px;">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+                <nav aria-label="breadcrumb" class="mb-6">
+                    <ol style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 14px;">
+                        <li style="display: inline-flex; align-items: center; gap: 6px;">
+                            <a href="Index.html" style="color: rgba(255,255,255,0.7); transition: color 0.2s;">Home</a>
+                        </li>
+                        <li style="color: rgba(255,255,255,0.3);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline;">
+                                <path d="m9 18 6-6-6-6"></path>
+                            </svg>
+                        </li>
+                        <li style="display: inline-flex; align-items: center; gap: 6px;">
+                            <a href="research.html" style="color: rgba(255,255,255,0.7); transition: color 0.2s;">Research</a>
+                        </li>
+                        <li style="color: rgba(255,255,255,0.3);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline;">
+                                <path d="m9 18 6-6-6-6"></path>
+                            </svg>
+                        </li>
+                        <li style="display: inline-flex; align-items: center; gap: 6px; color: white; font-weight: 500;">Rhetoric of Risk &amp; Harm</li>
+                    </ol>
+                </nav>
+                <div style="display: inline-block; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 16px; background: rgba(41, 163, 147, 0.3); color: rgb(168, 240, 230); border: 1px solid rgba(41, 163, 147, 0.5);">Seminar Paper</div>
+                <h1 style="font-size: 48px; font-weight: 700; margin: 0 0 16px 0; color: rgb(248, 252, 251); font-family: Georgia, serif;">Rhetoric of Risk &amp; Harm</h1>
+                <p style="font-size: 18px; max-width: 700px; line-height: 1.7; color: rgb(172, 210, 204); margin: 0;">A Rhetorical Analysis of Nutrient-Fortified Claims in Ultra-Processed Foods.</p>
+            </div>
+        </div>
+        <div style="padding: 60px 20px;">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+                <a href="research.html" class="back-button" style="display: inline-flex; align-items: center; gap: 8px; color: var(--text-gray); font-size: 14px; font-weight: 600; margin-bottom: 40px; transition: color 0.3s ease;">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 16px; height: 16px;">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path>
+                    </svg>Back to Research
+                </a>
+                <article style="max-width: 900px;">
+                    <div style="margin-bottom: 40px;">
+                        <p style="font-size: 18px; color: var(--text-gray); line-height: 1.8;">A rhetorical analysis examining how stakeholders use scientific authority, strategic ambiguity, and emotive framing to construct competing narratives about ultra-processed foods.</p>
+                    </div>
+
+                    <section style="background: rgba(22, 163, 74, 0.05); padding: 30px; border-radius: 12px; border: 1px solid rgba(22, 163, 74, 0.2); margin-bottom: 60px;">
+                        <h2 style="font-size: 24px; font-weight: 700; margin: 0 0 16px 0; color: var(--text-dark); font-family: Georgia, serif;">Thesis</h2>
+                        <p style="color: var(--text-gray); line-height: 1.8; margin: 0;">Through appeals to scientific authority, strategic ambiguity, and emotive framing, stakeholders construct competing narratives about UPFs, revealing how risk communication influences policy and consumer behavior. This discourse
+                            shapes individual perceptions and informs broader public health policies.</p>
+                    </section>
+
+                    <section style="margin-bottom: 60px;">
+                        <h2 style="font-size: 28px; font-weight: 700; margin: 0 0 30px 0; color: var(--text-dark); font-family: Georgia, serif;">Key Findings</h2>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                            <div style="padding: 20px; background: #f5f5f5; border-radius: 12px; border: 1px solid var(--border-color);">
+                                <h3 style="font-size: 15px; font-weight: 600; margin: 0 0 10px 0; color: var(--text-dark);">Scientific Authority</h3>
+                                <p style="font-size: 13px; color: var(--text-gray); margin: 0; line-height: 1.6;">How claims of 'nutrient-rich' and scientific backing obscure health risks.</p>
+                            </div>
+                            <div style="padding: 20px; background: #f5f5f5; border-radius: 12px; border: 1px solid var(--border-color);">
+                                <h3 style="font-size: 15px; font-weight: 600; margin: 0 0 10px 0; color: var(--text-dark);">Strategic Ambiguity</h3>
+                                <p style="font-size: 13px; color: var(--text-gray); margin: 0; line-height: 1.6;">Marketing language that conflates 'natural' with healthy.</p>
+                            </div>
+                            <div style="padding: 20px; background: #f5f5f5; border-radius: 12px; border: 1px solid var(--border-color);">
+                                <h3 style="font-size: 15px; font-weight: 600; margin: 0 0 10px 0; color: var(--text-dark);">Consumer Perception</h3>
+                                <p style="font-size: 13px; color: var(--text-gray); margin: 0; line-height: 1.6;">Gap between marketed benefits and actual nutritional quality.</p>
+                            </div>
+                            <div style="padding: 20px; background: #f5f5f5; border-radius: 12px; border: 1px solid var(--border-color);">
+                                <h3 style="font-size: 15px; font-weight: 600; margin: 0 0 10px 0; color: var(--text-dark);">Policy Implications</h3>
+                                <p style="font-size: 13px; color: var(--text-gray); margin: 0; line-height: 1.6;">How discourse shapes public health messaging and regulations.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section style="margin-bottom: 60px;">
+                        <h2 style="font-size: 28px; font-weight: 700; margin: 0 0 20px 0; color: var(--text-dark); font-family: Georgia, serif;">Background: NOVA Classification</h2>
+                        <p style="font-size: 15px; color: var(--text-gray); line-height: 1.8; margin: 0;">Ultra-processed foods (UPFs) are defined within the NOVA classification system as food products that have undergone significant industrial processing, often containing additives like preservatives, artificial colors, and flavors.
+                            A 2021 Lancet study revealed that UPFs comprise 58% of calories consumed in the U.S., coinciding with a 40% adult obesity rate.</p>
+                    </section>
+
+                    <section style="margin-bottom: 60px;">
+                        <h2 style="font-size: 28px; font-weight: 700; margin: 0 0 30px 0; color: var(--text-dark); font-family: Georgia, serif;">Rhetorical Framework</h2>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                            <div style="padding: 20px; border: 1px solid var(--border-color); border-radius: 12px;">
+                                <h3 style="font-size: 15px; font-weight: 600; margin: 0 0 8px 0; color: var(--brand);">Logos</h3>
+                                <p style="font-size: 13px; color: var(--text-gray); margin: 0; line-height: 1.6;">Analysis of scientific claims and data presentation</p>
+                            </div>
+                            <div style="padding: 20px; border: 1px solid var(--border-color); border-radius: 12px;">
+                                <h3 style="font-size: 15px; font-weight: 600; margin: 0 0 8px 0; color: var(--brand);">Ethos</h3>
+                                <p style="font-size: 13px; color: var(--text-gray); margin: 0; line-height: 1.6;">Credibility construction by industry vs. health advocates</p>
+                            </div>
+                            <div style="padding: 20px; border: 1px solid var(--border-color); border-radius: 12px;">
+                                <h3 style="font-size: 15px; font-weight: 600; margin: 0 0 8px 0; color: var(--brand);">Pathos</h3>
+                                <p style="font-size: 13px; color: var(--text-gray); margin: 0; line-height: 1.6;">Emotional appeals in marketing and health warnings</p>
+                            </div>
+                            <div style="padding: 20px; border: 1px solid var(--border-color); border-radius: 12px;">
+                                <h3 style="font-size: 15px; font-weight: 600; margin: 0 0 8px 0; color: var(--brand);">Kairos</h3>
+                                <p style="font-size: 13px; color: var(--text-gray); margin: 0; line-height: 1.6;">Timing and context of public health messaging</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section style="margin-bottom: 60px;">
+                        <h2 style="font-size: 28px; font-weight: 700; margin: 0 0 20px 0; color: var(--text-dark); font-family: Georgia, serif;">Recommendations</h2>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+                            <li style="display: flex; gap: 12px; color: var(--text-gray); line-height: 1.6;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--brand); flex-shrink: 0; margin-top: 2px;">
+                                    <path d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>More transparent communication regarding nutritional quality</span>
+                            </li>
+                            <li style="display: flex; gap: 12px; color: var(--text-gray); line-height: 1.6;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--brand); flex-shrink: 0; margin-top: 2px;">
+                                    <path d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Critical assessment of marketing language in health guidelines</span>
+                            </li>
+                            <li style="display: flex; gap: 12px; color: var(--text-gray); line-height: 1.6;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--brand); flex-shrink: 0; margin-top: 2px;">
+                                    <path d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Consumer education on interpreting food product claims</span>
+                            </li>
+                            <li style="display: flex; gap: 12px; color: var(--text-gray); line-height: 1.6;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--brand); flex-shrink: 0; margin-top: 2px;">
+                                    <path d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Policy reform to address misleading health claims</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <div style="background: rgba(22, 163, 74, 0.05); border: 1px solid rgba(22, 163, 74, 0.2); border-radius: 12px; padding: 30px; margin: 60px 0;">
+                        <div style="display: inline-block; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 16px; background: rgba(41, 163, 147, 0.3); color: rgb(168, 240, 230); border: 1px solid rgba(41, 163, 147, 0.5);">Seminar Paper</div>
+                        <a href="https://docs.google.com/document/d/1KkPdul5C4BZncb1H8epur7dbuPlzJuYN/edit?usp=sharing&amp;ouid=105963560798243610761&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 10px; color: var(--brand); font-weight: 600; font-size: 14px; transition: color 0.3s ease;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path>
+                            </svg>Read Full Paper (Google Docs)
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="templates/load-templates.js"></script>
+</body>
+
+</html>
