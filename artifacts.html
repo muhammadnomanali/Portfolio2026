@@ -14,6 +14,8 @@
             --text-gray: #666666;
             --text-light: #999999;
             --brand: #16a34a;
+            --header-teal: #2d9a9a;
+            --header-dark-teal: #1f4a4a;
             --border-color: #e5e5e5;
             --card-bg: #f9f9f9;
             --radius: 12px;
@@ -27,6 +29,7 @@
         
         html {
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
         
         html,
@@ -63,58 +66,99 @@
         .skip-link {
             position: absolute;
             left: -999px;
+            background: var(--brand);
+            color: white;
+            padding: 10px;
+            z-index: 100;
         }
         
         .skip-link:focus {
             left: 16px;
             top: 16px;
         }
-        /* Header */
-        
+
+        /* ===== HEADER (Two-Row Design) ===== */
         header {
-            border-bottom: 1px solid #1f4a4a;
-            background-color: #2d5a5a;
-            padding: 20px 0;
+            background: linear-gradient(135deg, #3ab5b5 0%, #2d9a9a 50%, #1f7a7a 100%);
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
-        
+
+        /* First Row - Navigation Menu (Smaller) */
+        .header-nav-row {
+            background-color: rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 12px 0;
+        }
+
         .container {
             max-width: var(--max-width);
             margin: 0 auto;
             padding: 0 20px;
+            width: 100%;
         }
-        
+
         .nav {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 20px;
+            justify-content: flex-end;
+            gap: 30px;
         }
-        
-        .brand {
-            font-size: 18px;
-            font-weight: 600;
-            color: #ffffff;
-            white-space: nowrap;
-        }
-        
+
         .links {
             display: flex;
             gap: 30px;
             align-items: center;
             flex-wrap: wrap;
-            justify-content: flex-end;
         }
-        
+
         .links a {
-            font-size: 14px;
-            color: #d1d5db;
-            transition: color 0.2s;
-        }
-        
-        .links a:hover {
+            font-size: 13px;
             color: #ffffff;
+            transition: all 0.2s;
+            padding: 6px 12px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+
+        .links a:hover,
+        .links a:focus {
+            background-color: rgba(255, 255, 255, 0.15);
             text-decoration: none;
         }
+
+        /* Second Row - Branding (Larger) */
+        .header-brand-row {
+            padding: 40px 0;
+        }
+
+        .brand-content {
+            text-align: left;
+        }
+
+        .brand-name {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 8px 0;
+            line-height: 1.1;
+        }
+
+        .brand-tagline {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+            margin: 0;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+        }
+        
         /* Main content */
         
         main {
@@ -123,7 +167,7 @@
         /* Hero Section */
         
         .artifacts-hero {
-            background: linear-gradient(135deg, #153737 0%, #1a4d46 100%);
+            background: #ffffff;
             padding: 60px 20px;
         }
         
@@ -131,7 +175,7 @@
             font-size: 42px;
             font-weight: 700;
             margin: 20px 0 16px 0;
-            color: #f8fcfb;
+            color: var(--text-dark);
             font-family: Georgia, serif;
         }
         
@@ -139,7 +183,7 @@
             font-size: 18px;
             max-width: 700px;
             line-height: 1.7;
-            color: #acd2cc;
+            color: var(--text-gray);
         }
         /* Breadcrumb */
         
@@ -148,25 +192,25 @@
             gap: 12px;
             margin-bottom: 24px;
             font-size: 14px;
-            color: #acd2cc;
+            color: var(--text-gray);
         }
         
         .breadcrumb a {
-            color: rgba(255, 255, 255, 0.7);
+            color: #2d9a9a;
             transition: color 0.3s ease;
         }
         
         .breadcrumb a:hover {
-            color: #ffffff;
+            color: #1f7a7a;
             text-decoration: none;
         }
         
         .breadcrumb .separator {
-            color: rgba(255, 255, 255, 0.3);
+            color: var(--text-light);
         }
         
         .breadcrumb .current {
-            color: #ffffff;
+            color: var(--text-dark);
             font-weight: 600;
         }
         /* Artifacts Section */
@@ -229,7 +273,7 @@
         .artifact-tag {
             display: inline-block;
             background: #d4f4f1;
-            color: var(--brand);
+            color: #2d9a9a;
             padding: 6px 12px;
             border-radius: 4px;
             font-size: 12px;
@@ -258,7 +302,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            color: var(--brand);
+            color: #2d9a9a;
             font-weight: 600;
             font-size: 14px;
             margin-top: 8px;
@@ -273,6 +317,69 @@
         .artifact-card:hover .artifact-link svg {
             transform: translateX(4px);
         }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(135deg, #3ab5b5 0%, #2d9a9a 50%, #1f7a7a 100%);
+            padding: 50px 0 30px;
+            color: #ffffff;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .footer-about h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0 0 16px 0;
+            color: #ffffff;
+        }
+
+        .footer-about p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+        }
+
+        .footer-links-section h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 20px 0;
+            color: #ffffff;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.85);
+            transition: all 0.2s;
+            font-size: 14px;
+            display: inline-block;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+            text-decoration: none;
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 24px;
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.8);
+        }
         
         @media (max-width: 1024px) {
             .artifacts-grid {
@@ -281,6 +388,28 @@
         }
         
         @media (max-width: 768px) {
+            /* Header responsive */
+            .header-brand-row {
+                padding: 30px 0;
+            }
+
+            .brand-name {
+                font-size: 32px;
+            }
+
+            .brand-tagline {
+                font-size: 15px;
+            }
+
+            .links {
+                gap: 15px;
+            }
+
+            .links a {
+                font-size: 12px;
+                padding: 5px 10px;
+            }
+
             .artifacts-hero {
                 padding: 60px 0;
             }
@@ -308,26 +437,55 @@
             .artifact-card p {
                 font-size: 13px;
             }
-            .links {
-                gap: 15px;
-                font-size: 13px;
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .footer-links {
+                align-items: center;
             }
         }
         
         @media (max-width: 480px) {
+            /* Header mobile */
+            .header-nav-row {
+                padding: 10px 0;
+            }
+
+            .header-brand-row {
+                padding: 25px 0;
+            }
+
+            .brand-name {
+                font-size: 26px;
+            }
+
+            .brand-tagline {
+                font-size: 13px;
+            }
+
+            .nav {
+                justify-content: center;
+            }
+
+            .links {
+                gap: 10px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .links a {
+                font-size: 11px;
+                padding: 4px 8px;
+            }
+
             .container {
                 padding: 0 16px;
             }
-            .nav {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
-            }
-            .links {
-                width: 100%;
-                justify-content: flex-start;
-                gap: 20px;
-            }
+
             .artifacts-hero {
                 padding: 40px 0;
             }
@@ -352,56 +510,6 @@
             .artifact-card h3 {
                 font-size: 16px;
             }
-            footer .container {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-        /* Footer */
-        
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 30px 0;
-            background-color: var(--card-bg);
-            font-size: 13px;
-            color: var(--text-gray);
-        }
-        
-        footer .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        footer a {
-            color: var(--text-gray);
-            transition: color 0.2s;
-        }
-        
-        footer a:hover {
-            color: var(--text-dark);
-            text-decoration: none;
-        }
-        /* Responsive */
-        
-        @media (max-width: 768px) {
-            .links {
-                gap: 15px;
-                font-size: 13px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .nav {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            footer .container {
-                flex-direction: column;
-                text-align: center;
-            }
         }
     </style>
 </head>
@@ -409,8 +517,33 @@
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Header Placeholder -->
-    <div id="header-placeholder"></div>
+    <!-- Header (Two-Row Design) -->
+    <header>
+        <!-- First Row - Navigation Menu -->
+        <div class="header-nav-row">
+            <div class="container">
+                <nav class="nav" role="navigation" aria-label="Main navigation">
+                    <div class="links">
+                        <a href="index.html">HOME</a>
+                        <a href="about.html">ABOUT</a>
+                        <a href="artifacts.html">PORTFOLIO</a>
+                        <a href="research.html">RESEARCH</a>
+                        <a href="https://drive.google.com/file/d/1-g-524K9rpg3P82vt-_gGgFG9hEjtOW_/view?usp=sharing" class="resume-btn" style="background-color: #dc2626; color: white; padding: 8px 16px; border-radius: 6px; margin-left: 10px;">RESUME</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Second Row - Branding (Larger) -->
+        <div class="header-brand-row">
+            <div class="container">
+                <div class="brand-content">
+                    <h1 class="brand-name">Noman Ali</h1>
+                    <p class="brand-tagline">Digital Rhetoric, Risk & Inclusive Design</p>
+                </div>
+            </div>
+        </div>
+    </header>
 
     <!-- Main Content -->
     <main id="main">
@@ -418,7 +551,7 @@
         <div class="artifacts-hero">
             <div class="container">
                 <nav class="breadcrumb">
-                    <a href="Index.html">Home</a>
+                    <a href="index.html">Home</a>
                     <span class="separator">/</span>
                     <span class="current">Artifacts</span>
                 </nav>
@@ -446,7 +579,7 @@
 
             <a href="recipe-book.html" class="artifact-card">
                 <div class="artifact-image">
-                    <img src="Artifacts&Research/image-1.jpeg" alt="Car Safety Infographic" />
+                    <img src="Artifacts&Research/image-1.jpeg" alt="Recipe Book Technical Editing" />
                 </div>
                 <div class="artifact-content">
                     <span class="artifact-tag">Editing</span>
@@ -461,7 +594,7 @@
 
             <a href="A-Z-Events.html" class="artifact-card">
                 <div class="artifact-image">
-                    <img src="Artifacts&Research/image-2.jpeg" alt="Car Safety Infographic" />
+                    <img src="Artifacts&Research/image-2.jpeg" alt="A-Z Events Website" />
                 </div>
                 <div class="artifact-content">
                     <span class="artifact-tag">Web Dev</span>
@@ -476,10 +609,41 @@
         </section>
     </main>
 
-    <!-- Footer Placeholder -->
-    <div id="footer-placeholder"></div>
-
-    <script src="templates/load-templates.js"></script>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Muhammad Noman Ali</h3>
+                    <p>MTPC Graduate Student at Auburn University, specializing in digital rhetoric, risk communication, and inclusive design. Building accessible web experiences that prioritize clarity and cultural inclusion.</p>
+                </div>
+                <div class="footer-links-section">
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                    </div>
+                </div>
+                <div class="footer-links-section">
+                    <h4>Portfolio</h4>
+                    <div class="footer-links">
+                        <a href="artifacts.html">Artifacts</a>
+                        <a href="research.html">Research</a>
+                    </div>
+                </div>
+                <div class="footer-links-section">
+                    <h4>Connect</h4>
+                    <div class="footer-links">
+                        <a href="https://www.linkedin.com/in/noman-ali-8a10b815" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="mailto:mza0140@auburn.edu">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 Muhammad Noman Ali. All rights reserved.
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
