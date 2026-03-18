@@ -228,10 +228,7 @@
         /* ===== PAGE BANNER / HERO ===== */
         
         .artifacts-hero {
-            background-color: #f0fdfa; /* Light mint base */
-            /* Dotted pattern overlay for a technical/design feel */
-            background-image: radial-gradient(rgba(45, 154, 154, 0.2) 1.5px, transparent 1.5px);
-            background-size: 24px 24px;
+            background: linear-gradient(135deg, #e0f2f1 0%, #f4fbfb 100%);
             padding: 100px 20px 80px;
             position: relative;
             border-bottom: 1px solid var(--border-color);
@@ -243,7 +240,8 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.95) 100%);
+            background-image: radial-gradient(rgba(45, 154, 154, 0.1) 2px, transparent 2px);
+            background-size: 24px 24px;
             z-index: 0;
         }
         
@@ -617,43 +615,8 @@
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Header (Two-Row Design) -->
-    <header>
-        <!-- First Row - Navigation Menu -->
-        <div class="header-nav-row">
-            <div class="container">
-                <nav class="nav" role="navigation" aria-label="Main navigation">
-                    <div class="links">
-                        <a href="index.html">HOME</a>
-                        <a href="about.html">ABOUT</a>
-                        
-                        <!-- Combined Dropdown for Work & Research -->
-                        <div class="dropdown">
-                            <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
-                                WORK <span class="arrow">▼</span>
-                            </button>
-                            <div class="dropdown-content">
-                                <a href="artifacts.html">Artifacts & Design</a>
-                                <a href="research.html">Research</a>
-                            </div>
-                        </div>
-
-                        <a href="resume.html">RESUME</a>
-                    </div>
-                </nav>
-            </div>
-        </div>
-
-        <!-- Second Row - Branding (Larger) -->
-        <div class="header-brand-row">
-            <div class="container">
-                <div class="brand-content">
-                    <h1 class="brand-name">Noman Ali</h1>
-                    <p class="brand-tagline">Intercultural Practice & Technical Communication</p>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- Header Placeholder (Loaded via JS) -->
+    <div id="header-placeholder"></div>
 
     <!-- Main Content -->
     <main id="main">
@@ -719,40 +682,11 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <h3>Noman Ali</h3>
-                </div>
-                <div class="footer-links-section">
-                    <h4>Quick Links</h4>
-                    <div class="footer-links">
-                        <a href="index.html">Home</a>
-                        <a href="about.html">About</a>
-                    </div>
-                </div>
-                <div class="footer-links-section">
-                    <h4>Portfolio</h4>
-                    <div class="footer-links">
-                        <a href="artifacts.html">Artifacts</a>
-                        <a href="research.html">Research</a>
-                    </div>
-                </div>
-                <div class="footer-links-section">
-                    <h4>Connect</h4>
-                    <div class="footer-links">
-                        <a href="https://www.linkedin.com/in/noman-ali-8a10b815" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                        <a href="mailto:mza0140@auburn.edu">Email</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                © 2026 Noman Ali. All rights reserved.
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Placeholder (Loaded via JS) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Script to load the Header and Footer templates -->
+    <script src="templates/main.js"></script>
 </body>
 
 </html>
