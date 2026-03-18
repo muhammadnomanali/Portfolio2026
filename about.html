@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>About - Noman Ali</title>
-    <meta name="description" content="Learn about Muhammad Noman Ali, MTPC Graduate Student at Auburn University specializing in digital rhetoric, risk communication, and inclusive design." />
+    <meta name="description" content="Learn about Noman Ali, MTPC Graduate Student at Auburn University specializing in digital rhetoric, risk communication, and inclusive design." />
 
     <style>
          :root {
@@ -130,6 +130,71 @@
             text-decoration: none;
         }
 
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background: none;
+            border: none;
+            font-size: 13px;
+            color: #ffffff;
+            padding: 6px 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+            border-radius: 4px;
+        }
+
+        .dropbtn .arrow {
+            font-size: 10px;
+        }
+
+        .dropbtn:hover, .dropdown:hover .dropbtn {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+            z-index: 1;
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            margin-top: 5px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .dropdown-content a {
+            color: var(--text-dark) !important;
+            padding: 12px 16px;
+            display: block;
+            text-transform: none;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f0f9f8 !important;
+            color: var(--header-teal) !important;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
         .header-brand-row {
             padding: 40px 0;
         }
@@ -151,9 +216,6 @@
             color: rgba(255, 255, 255, 0.9);
             font-weight: 300;
             margin: 0;
-            text-decoration: underline;
-            text-decoration-thickness: 2px;
-            text-underline-offset: 4px;
         }
         
         /* Main content */
@@ -337,21 +399,30 @@
             white-space: nowrap;
         }
 
-        .education-skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 16px;
+        .top-skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            list-style: none;
+            padding: 0;
+            margin: 24px 0 0 0;
         }
 
-        .skill-tag {
+        .top-skills-list li {
+            font-size: 15px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+        }
+
+        .top-skills-list li::before {
+            content: '';
             display: inline-block;
-            background: rgba(45, 154, 154, 0.1);
-            color: #2d9a9a;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 500;
+            width: 8px;
+            height: 8px;
+            background-color: var(--header-teal);
+            border-radius: 50%;
+            margin-right: 12px;
         }
 
         /* Research Areas */
@@ -445,6 +516,7 @@
             background: rgba(255, 255, 255, 0.9);
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            text-decoration: none;
         }
 
         .btn-secondary {
@@ -456,6 +528,34 @@
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.1);
             transform: translateY(-2px);
+            text-decoration: none;
+        }
+
+        .btn-hero-primary {
+            background: #2d9a9a;
+            color: #ffffff;
+            border: 2px solid #2d9a9a;
+        }
+
+        .btn-hero-primary:hover {
+            background: #1f7a7a;
+            border-color: #1f7a7a;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-hero-secondary {
+            background: transparent;
+            color: #2d9a9a;
+            border: 2px solid #2d9a9a;
+        }
+
+        .btn-hero-secondary:hover {
+            background: #2d9a9a;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         /* ===== FOOTER ===== */
@@ -477,13 +577,6 @@
             font-weight: 600;
             margin: 0 0 16px 0;
             color: #ffffff;
-        }
-
-        .footer-about p {
-            font-size: 14px;
-            line-height: 1.7;
-            color: rgba(255, 255, 255, 0.9);
-            margin: 0;
         }
 
         .footer-links-section h4 {
@@ -547,9 +640,30 @@
                 gap: 15px;
             }
 
-            .links a {
+            .links a, .dropbtn {
                 font-size: 12px;
                 padding: 5px 10px;
+            }
+
+            /* Dropdown mobile adjustments */
+            .dropdown-content {
+                position: relative;
+                top: 0;
+                box-shadow: none;
+                border: none;
+                background-color: transparent;
+                margin-left: 15px;
+                min-width: auto;
+            }
+            
+            .dropdown-content a {
+                color: rgba(255,255,255,0.85) !important;
+                padding: 8px 12px;
+            }
+
+            .dropdown-content a:hover {
+                background-color: transparent !important;
+                color: #ffffff !important;
             }
 
             .about-hero {
@@ -631,7 +745,7 @@
                 flex-wrap: wrap;
             }
 
-            .links a {
+            .links a, .dropbtn {
                 font-size: 11px;
                 padding: 4px 8px;
             }
@@ -700,9 +814,16 @@
                     <div class="links">
                         <a href="index.html">HOME</a>
                         <a href="about.html">ABOUT</a>
-                        <a href="artifacts.html">PORTFOLIO</a>
-                        <a href="research.html">RESEARCH</a>
-                        <a href="https://drive.google.com/file/d/1-g-524K9rpg3P82vt-_gGgFG9hEjtOW_/view?usp=sharing" class="resume-btn" style="background-color: #dc2626; color: white; padding: 8px 16px; border-radius: 6px; margin-left: 10px;">RESUME</a>
+                        <div class="dropdown">
+                            <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+                                WORK <span class="arrow">▼</span>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="artifacts.html">Artifacts & Design</a>
+                                <a href="research.html">Research</a>
+                            </div>
+                        </div>
+                        <a href="resume.html">RESUME</a>
                     </div>
                 </nav>
             </div>
@@ -712,7 +833,7 @@
             <div class="container">
                 <div class="brand-content">
                     <h1 class="brand-name">Noman Ali</h1>
-                    <p class="brand-tagline">Assemblage, Intercultural Practice & Technical Communication</p>
+                    <p class="brand-tagline">Intercultural Practice & Technical Communication</p>
                 </div>
             </div>
         </div>
@@ -728,17 +849,17 @@
                 
                 <!-- Action Buttons -->
                 <div class="cta-buttons" style="margin-top: 32px; justify-content: center;">
-                    <a href="https://www.linkedin.com/in/noman-ali-8a10b815" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: #2d9a9a; color: white;">
+                    <a href="https://www.linkedin.com/in/noman-ali-8a10b815" target="_blank" rel="noopener noreferrer" class="btn btn-hero-primary">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                         </svg>
                         View LinkedIn Profile
                     </a>
-                    <a href="https://drive.google.com/file/d/1-g-524K9rpg3P82vt-_gGgFG9hEjtOW_/view?usp=sharing" class="btn btn-secondary" style="background: #dc2626; color: white; border: none;">
+                    <a href="resume.html" class="btn btn-hero-secondary">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path>
                         </svg>
-                        Download Resume
+                        View Resume
                     </a>
                 </div>
             </div>
@@ -819,18 +940,18 @@
             <!-- Top Skills -->
             <section class="about-section">
                 <h2>Top Skills</h2>
-                <div class="education-skills" style="margin-top: 24px;">
-                    <span class="skill-tag">Project Estimation</span>
-                    <span class="skill-tag">User Experience (UX)</span>
-                    <span class="skill-tag">UX Writing & Research</span>
-                    <span class="skill-tag">Technical Writing</span>
-                    <span class="skill-tag">Project Management</span>
-                    <span class="skill-tag">Pricing Strategy</span>
-                    <span class="skill-tag">Editing</span>
-                    <span class="skill-tag">Strategic Communications</span>
-                    <span class="skill-tag">Web Design</span>
-                    <span class="skill-tag">Graphic Design</span>
-                </div>
+                <ul class="top-skills-list">
+                    <li>Project Estimation</li>
+                    <li>User Experience (UX)</li>
+                    <li>UX Writing & Research</li>
+                    <li>Technical Writing</li>
+                    <li>Project Management</li>
+                    <li>Pricing Strategy</li>
+                    <li>Editing</li>
+                    <li>Strategic Communications</li>
+                    <li>Web Design</li>
+                    <li>Graphic Design</li>
+                </ul>
             </section>
         </div>
 
@@ -863,8 +984,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
-                    <h3>Muhammad Noman Ali</h3>
-                    <p>MTPC Graduate Student at Auburn University specializing in intercultural technical communication and assemblage-based approaches to communication practice.</p>
+                    <h3>Noman Ali</h3>
                 </div>
                 <div class="footer-links-section">
                     <h4>Quick Links</h4>
@@ -889,7 +1009,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                © 2026 Muhammad Noman Ali. All rights reserved.
+                © 2026 Noman Ali. All rights reserved.
             </div>
         </div>
     </footer>
