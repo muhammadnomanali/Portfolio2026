@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Artifacts - Noman Ali</title>
+    <title>Artifacts & Design - Noman Ali</title>
     <meta name="description" content="Noman Ali's portfolio artifacts, design work, and projects." />
 
     <style>
@@ -87,7 +87,6 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* First Row - Navigation Menu (Smaller) */
         .header-nav-row {
             background-color: rgba(0, 0, 0, 0.1);
             border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -132,7 +131,71 @@
             text-decoration: none;
         }
 
-        /* Second Row - Branding (Larger) */
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background: none;
+            border: none;
+            font-size: 13px;
+            color: #ffffff;
+            padding: 6px 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+            border-radius: 4px;
+        }
+
+        .dropbtn .arrow {
+            font-size: 10px;
+        }
+
+        .dropbtn:hover, .dropdown:hover .dropbtn {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+            z-index: 1;
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            margin-top: 5px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .dropdown-content a {
+            color: var(--text-dark) !important;
+            padding: 12px 16px;
+            display: block;
+            text-transform: none;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f0f9f8 !important;
+            color: var(--header-teal) !important;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
         .header-brand-row {
             padding: 40px 0;
         }
@@ -154,9 +217,6 @@
             color: rgba(255, 255, 255, 0.9);
             font-weight: 300;
             margin: 0;
-            text-decoration: underline;
-            text-decoration-thickness: 2px;
-            text-underline-offset: 4px;
         }
         
         /* Main content */
@@ -164,19 +224,41 @@
         main {
             flex: 1;
         }
-        /* Hero Section */
+        
+        /* ===== PAGE BANNER / HERO ===== */
         
         .artifacts-hero {
-            background: #ffffff;
-            padding: 60px 20px;
+            background-color: #f0fdfa; /* Light mint base */
+            /* Dotted pattern overlay for a technical/design feel */
+            background-image: radial-gradient(rgba(45, 154, 154, 0.2) 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+            padding: 100px 20px 80px;
+            position: relative;
+            border-bottom: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        /* Subtle white fade to make text ultra-readable over the pattern */
+        .artifacts-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.95) 100%);
+            z-index: 0;
         }
         
+        .artifacts-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
         .artifacts-hero h1 {
-            font-size: 42px;
+            font-size: 48px;
             font-weight: 700;
             margin: 20px 0 16px 0;
             color: var(--text-dark);
             font-family: Georgia, serif;
+            letter-spacing: -0.5px;
         }
         
         .artifacts-hero p {
@@ -185,23 +267,32 @@
             line-height: 1.7;
             color: var(--text-gray);
         }
+
         /* Breadcrumb */
         
         .breadcrumb {
-            display: flex;
+            display: inline-flex;
             gap: 12px;
-            margin-bottom: 24px;
-            font-size: 14px;
+            margin-bottom: 16px;
+            font-size: 13px;
             color: var(--text-gray);
+            background: rgba(255, 255, 255, 0.8);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
         }
         
         .breadcrumb a {
-            color: #2d9a9a;
+            color: var(--header-teal);
             transition: color 0.3s ease;
         }
         
         .breadcrumb a:hover {
-            color: #1f7a7a;
+            color: var(--header-dark-teal);
             text-decoration: none;
         }
         
@@ -211,8 +302,8 @@
         
         .breadcrumb .current {
             color: var(--text-dark);
-            font-weight: 600;
         }
+
         /* Artifacts Section */
         
         .artifacts-grid {
@@ -240,6 +331,7 @@
         
         .artifact-card:hover {
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
         }
         
         .artifact-card:hover .artifact-image img {
@@ -252,6 +344,7 @@
             background: #f0f0f0;
             overflow: hidden;
             flex-shrink: 0;
+            position: relative;
         }
         
         .artifact-image img {
@@ -259,7 +352,7 @@
             height: 100%;
             object-fit: cover;
             object-position: top;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
         }
         
         .artifact-content {
@@ -273,13 +366,14 @@
         .artifact-tag {
             display: inline-block;
             background: #d4f4f1;
-            color: #2d9a9a;
+            color: var(--header-teal);
             padding: 6px 12px;
             border-radius: 4px;
             font-size: 12px;
             font-weight: 600;
             width: fit-content;
             letter-spacing: 0.3px;
+            text-transform: uppercase;
         }
         
         .artifact-content h3 {
@@ -287,7 +381,6 @@
             margin: 0;
             color: var(--text-dark);
             font-weight: 600;
-            font-family: Georgia, serif;
         }
         
         .artifact-content p {
@@ -302,7 +395,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            color: #2d9a9a;
+            color: var(--header-teal);
             font-weight: 600;
             font-size: 14px;
             margin-top: 8px;
@@ -338,13 +431,6 @@
             font-weight: 600;
             margin: 0 0 16px 0;
             color: #ffffff;
-        }
-
-        .footer-about p {
-            font-size: 14px;
-            line-height: 1.7;
-            color: rgba(255, 255, 255, 0.9);
-            margin: 0;
         }
 
         .footer-links-section h4 {
@@ -405,22 +491,43 @@
                 gap: 15px;
             }
 
-            .links a {
+            .links a, .dropbtn {
                 font-size: 12px;
                 padding: 5px 10px;
             }
 
+            /* Dropdown mobile adjustments */
+            .dropdown-content {
+                position: relative;
+                top: 0;
+                box-shadow: none;
+                border: none;
+                background-color: transparent;
+                margin-left: 15px;
+                min-width: auto;
+            }
+            
+            .dropdown-content a {
+                color: rgba(255,255,255,0.85) !important;
+                padding: 8px 12px;
+            }
+
+            .dropdown-content a:hover {
+                background-color: transparent !important;
+                color: #ffffff !important;
+            }
+
             .artifacts-hero {
-                padding: 60px 0;
+                padding: 60px 20px;
             }
             .artifacts-hero h1 {
-                font-size: 32px;
+                font-size: 36px;
             }
             .artifacts-hero p {
                 font-size: 16px;
             }
             .breadcrumb {
-                font-size: 13px;
+                font-size: 12px;
                 margin-bottom: 20px;
             }
             .artifacts-grid {
@@ -429,13 +536,13 @@
                 padding: 60px 20px;
             }
             .artifact-card {
+                padding: 0; /* Removing extra padding applied dynamically on mobile */
+            }
+            .artifact-content {
                 padding: 24px;
             }
-            .artifact-card h3 {
+            .artifact-content h3 {
                 font-size: 18px;
-            }
-            .artifact-card p {
-                font-size: 13px;
             }
 
             .footer-content {
@@ -477,7 +584,7 @@
                 flex-wrap: wrap;
             }
 
-            .links a {
+            .links a, .dropbtn {
                 font-size: 11px;
                 padding: 4px 8px;
             }
@@ -487,28 +594,21 @@
             }
 
             .artifacts-hero {
-                padding: 40px 0;
+                padding: 50px 16px;
             }
             .artifacts-hero h1 {
-                font-size: 28px;
-            }
-            .artifacts-hero p {
-                font-size: 14px;
-            }
-            .breadcrumb {
-                font-size: 12px;
-                margin-bottom: 16px;
+                font-size: 30px;
             }
             .artifacts-grid {
                 grid-template-columns: 1fr;
                 padding: 40px 16px;
-                gap: 16px;
+                gap: 20px;
             }
-            .artifact-card {
+            .artifact-content {
                 padding: 20px;
             }
-            .artifact-card h3 {
-                font-size: 16px;
+            .artifact-content h3 {
+                font-size: 18px;
             }
         }
     </style>
@@ -526,9 +626,19 @@
                     <div class="links">
                         <a href="index.html">HOME</a>
                         <a href="about.html">ABOUT</a>
-                        <a href="artifacts.html">PORTFOLIO</a>
-                        <a href="research.html">RESEARCH</a>
-                        <a href="https://drive.google.com/file/d/1-g-524K9rpg3P82vt-_gGgFG9hEjtOW_/view?usp=sharing" class="resume-btn" style="background-color: #dc2626; color: white; padding: 8px 16px; border-radius: 6px; margin-left: 10px;">RESUME</a>
+                        
+                        <!-- Combined Dropdown for Work & Research -->
+                        <div class="dropdown">
+                            <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+                                WORK <span class="arrow">▼</span>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="artifacts.html">Artifacts & Design</a>
+                                <a href="research.html">Research</a>
+                            </div>
+                        </div>
+
+                        <a href="resume.html">RESUME</a>
                     </div>
                 </nav>
             </div>
@@ -539,7 +649,7 @@
             <div class="container">
                 <div class="brand-content">
                     <h1 class="brand-name">Noman Ali</h1>
-                    <p class="brand-tagline">Assemblage, Intercultural Practice & Technical Communication</p>
+                    <p class="brand-tagline">Intercultural Practice & Technical Communication</p>
                 </div>
             </div>
         </div>
@@ -547,15 +657,15 @@
 
     <!-- Main Content -->
     <main id="main">
-        <!-- Hero Section -->
+        <!-- Hero Section / Page Cover -->
         <div class="artifacts-hero">
             <div class="container">
                 <nav class="breadcrumb">
                     <a href="index.html">Home</a>
                     <span class="separator">/</span>
-                    <span class="current">Artifacts</span>
+                    <span class="current">Artifacts & Design</span>
                 </nav>
-                <h1>Artifacts</h1>
+                <h1>Artifacts & Design</h1>
                 <p>Projects demonstrating technical communication, design, and web development skills across various domains.</p>
             </div>
         </div>
@@ -614,8 +724,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
-                    <h3>Muhammad Noman Ali</h3>
-                    <p>MTPC Graduate Student at Auburn University specializing in intercultural technical communication and assemblage-based approaches to communication practice.</p>
+                    <h3>Noman Ali</h3>
                 </div>
                 <div class="footer-links-section">
                     <h4>Quick Links</h4>
@@ -640,7 +749,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                © 2026 Muhammad Noman Ali. All rights reserved.
+                © 2026 Noman Ali. All rights reserved.
             </div>
         </div>
     </footer>
