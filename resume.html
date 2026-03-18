@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resume - Noman Ali</title>
+    <meta name="description" content="Resume of Noman Ali, English language educator and Technical Communication specialist." />
+
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            --bg: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-gray: #444444; /* Slightly darker gray for better readability on resume */
+            --text-light: #999999;
+            --brand: #16a34a;
+            --header-teal: #2d9a9a;
+            --header-dark-teal: #1f4a4a;
+            --border-color: #e5e5e5;
+            --card-bg: #f9f9f9;
+            --radius: 12px;
+            --max-width: 1200px;
+            --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        /* ===== RESET & BASE ===== */
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: var(--card-bg); /* Slight off-white background for the page */
+            font-family: var(--sans);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== HEADER (Two-Row Design) ===== */
+        header {
+            background: linear-gradient(135deg, #3ab5b5 0%, #2d9a9a 50%, #1f7a7a 100%);
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-nav-row {
+            background-color: rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 12px 0;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 30px;
+        }
+
+        .links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            font-size: 13px;
+            color: #ffffff;
+            transition: all 0.2s;
+            padding: 6px 12px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+
+        .links a:hover,
+        .links a:focus {
+            background-color: rgba(255, 255, 255, 0.15);
+            text-decoration: none;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background: none;
+            border: none;
+            font-size: 13px;
+            color: #ffffff;
+            padding: 6px 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+            border-radius: 4px;
+        }
+
+        .dropbtn:hover, .dropdown:hover .dropbtn {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+            z-index: 1;
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            margin-top: 5px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .dropdown-content a {
+            color: var(--text-dark) !important;
+            padding: 12px 16px;
+            display: block;
+            text-transform: none;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f0f9f8 !important;
+            color: var(--header-teal) !important;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .header-brand-row {
+            padding: 40px 0;
+        }
+
+        .brand-content {
+            text-align: left;
+        }
+
+        .brand-name {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 8px 0;
+            line-height: 1.1;
+        }
+
+        .brand-tagline {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+            margin: 0;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        /* ===== RESUME CONTENT STYLES ===== */
+        .resume-container {
+            max-width: 850px;
+            margin: 60px auto;
+            background: #ffffff;
+            padding: 50px 60px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .resume-header {
+            text-align: center;
+            border-bottom: 2px solid var(--header-teal);
+            padding-bottom: 25px;
+            margin-bottom: 35px;
+        }
+
+        .resume-header h1 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 42px;
+            color: var(--text-dark);
+            margin: 0 0 10px 0;
+        }
+
+        .resume-contact {
+            font-size: 15px;
+            color: var(--text-gray);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .resume-contact span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .resume-section {
+            margin-bottom: 35px;
+        }
+
+        .resume-section h2 {
+            font-size: 20px;
+            color: var(--header-teal);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .profile-text {
+            font-size: 16px;
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        .job-item, .edu-item {
+            margin-bottom: 25px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .job-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .job-date {
+            font-size: 15px;
+            color: var(--header-teal);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .job-company {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-gray);
+            font-style: italic;
+            margin: 0 0 10px 0;
+        }
+
+        .resume-list {
+            padding-left: 20px;
+            margin: 0;
+            color: var(--text-gray);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .resume-list li {
+            margin-bottom: 8px;
+        }
+
+        .resume-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-list, .training-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .edu-list li {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 12px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .edu-list strong {
+            color: var(--text-dark);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            color: var(--text-gray);
+            font-size: 15px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(135deg, #3ab5b5 0%, #2d9a9a 50%, #1f7a7a 100%);
+            padding: 50px 0 30px;
+            color: #ffffff;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .footer-about h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0 0 16px 0;
+            color: #ffffff;
+        }
+
+        .footer-links-section h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 20px 0;
+            color: #ffffff;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.85);
+            transition: all 0.2s;
+            font-size: 14px;
+            display: inline-block;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+            text-decoration: none;
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 24px;
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .header-brand-row { padding: 30px 0; }
+            .brand-name { font-size: 32px; }
+            .brand-tagline { font-size: 15px; }
+            .links { gap: 15px; }
+            .links a, .dropbtn { font-size: 12px; padding: 5px 10px; }
+            
+            .resume-container {
+                padding: 30px 20px;
+                margin: 40px 20px;
+            }
+
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .job-date {
+                margin-top: 4px;
+                margin-bottom: 4px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            .footer-links { align-items: center; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-nav-row">
+            <div class="container">
+                <nav class="nav" role="navigation" aria-label="Main navigation">
+                    <div class="links">
+                        <a href="index.html">HOME</a>
+                        <a href="about.html">ABOUT</a>
+                        <div class="dropdown">
+                            <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+                                WORK <span class="arrow">▼</span>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="artifacts.html">Artifacts & Design</a>
+                                <a href="research.html">Research</a>
+                            </div>
+                        </div>
+                        <a href="resume.html">RESUME</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="header-brand-row">
+            <div class="container">
+                <div class="brand-content">
+                    <h1 class="brand-name">Noman Ali</h1>
+                    <p class="brand-tagline">Intercultural Practice & Technical Communication</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="resume-container">
+                
+                <!-- Resume Header -->
+                <div class="resume-header">
+                    <h1>Noman Ali</h1>
+                    <div class="resume-contact">
+                        <span>
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            +1 769 225 9962
+                        </span>
+                        <span>
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            mna0030@auburn.edu
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Profile Section -->
+                <div class="resume-section">
+                    <h2>Profile</h2>
+                    <p class="profile-text">
+                        English language educator with 20+ years of experience in academic, technical, and professional communication. Known for learner-centered instruction, clear assessment practices, and an engaging classroom culture that supports student confidence, critical thinking, and real-world writing outcomes.
+                    </p>
+                </div>
+
+                <!-- Experience Section -->
+                <div class="resume-section">
+                    <h2>Experience</h2>
+
+                    <div class="job-item">
+                        <div class="job-header">
+                            <h3 class="job-title">Teacher of Record</h3>
+                            <span class="job-date">2024 – Present</span>
+                        </div>
+                        <p class="job-company">Auburn University</p>
+                        <ul class="resume-list">
+                            <li>Teach first-year Composition to undergraduate classes, emphasizing academic writing, rhetoric, and research-based argumentation</li>
+                            <li>Design assignments, lesson plans, and assessment rubrics aligned with course outcomes and departmental standards</li>
+                            <li>Provide individualized feedback through conferencing, draft workshops, and revision coaching</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-item">
+                        <div class="job-header">
+                            <h3 class="job-title">English Language Instructor</h3>
+                            <span class="job-date">2018 – 2024</span>
+                        </div>
+                        <p class="job-company">King Abdulaziz University, Faculty of Engineering, Rabigh</p>
+                        <ul class="resume-list">
+                            <li>Teach Technical Writing (IEN-101) with emphasis on workplace communication and research-based technical reporting</li>
+                            <li>Guide students through topic selection, research proposals, literature reviews, and data-driven report writing</li>
+                            <li>Develop oral presentation skills through structured drills and project-based presentations</li>
+                            <li>Support graduating students with IELTS-focused instruction</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-item">
+                        <div class="job-header">
+                            <h3 class="job-title">ESP Instructor</h3>
+                            <span class="job-date">2017</span>
+                        </div>
+                        <p class="job-company">National Industrial Training Institute</p>
+                        <ul class="resume-list">
+                            <li>Taught English for Specific Purposes (ESP) to trainees from Saudi Aramco and allied companies</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-item">
+                        <div class="job-header">
+                            <h3 class="job-title">ESP Instructor</h3>
+                            <span class="job-date">2015 – 2016</span>
+                        </div>
+                        <p class="job-company">Maharat (JCC, Alhaqu, KSA)</p>
+                        <ul class="resume-list">
+                            <li>Delivered ESP instruction to technical trainees under the aegis of TVTC</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-item">
+                        <div class="job-header">
+                            <h3 class="job-title">Instructor</h3>
+                            <span class="job-date">2010 – 2014</span>
+                        </div>
+                        <p class="job-company">Aitchison College, Lahore</p>
+                        <ul class="resume-list">
+                            <li>Managed classroom instruction, lesson planning, and assessment through quizzes, exercises, and tests</li>
+                            <li>Prepared, administered, and marked examinations, including paper-setting responsibilities</li>
+                            <li>Created reading and writing resources and communicated learner progress with stakeholders</li>
+                            <li>Supported student development through co-curricular and cultural activities</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-item">
+                        <div class="job-header">
+                            <h3 class="job-title">Instructor</h3>
+                            <span class="job-date">2006 – 2008</span>
+                        </div>
+                        <p class="job-company">PAK-AIMS University, Institute of Management Sciences, Lahore</p>
+                        <ul class="resume-list">
+                            <li>Taught Basic English to BBA cohorts with focus on professional communication and workplace readiness</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-item">
+                        <div class="job-header">
+                            <h3 class="job-title">Instructor</h3>
+                            <span class="job-date">2006 – 2007</span>
+                        </div>
+                        <p class="job-company">Punjab College of Commerce, Canal Campus, Lahore</p>
+                        <ul class="resume-list">
+                            <li>Taught Functional English and Business Communication to B.Com classes</li>
+                            <li>Planned curriculum-aligned lessons and administered diagnostic and periodic assessments</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-item">
+                        <div class="job-header">
+                            <h3 class="job-title">Instructor</h3>
+                            <span class="job-date">2004 – 2012</span>
+                        </div>
+                        <p class="job-company">British Education & Training System (Branch of Nottingham Community College, UK)</p>
+                        <ul class="resume-list">
+                            <li>Delivered classroom and one-to-one instruction using technology-supported language learning strategies</li>
+                            <li>Planned and delivered lessons across age groups and proficiency levels</li>
+                            <li>Designed practice activities and provided timely feedback on oral and written work</li>
+                            <li>Taught specialist adult courses for business professionals and public-sector employees</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Education Section -->
+                <div class="resume-section">
+                    <h2>Education</h2>
+                    <ul class="edu-list">
+                        <li>
+                            <strong>Master in Technical & Professional Communication</strong>
+                            <span>Auburn University (2024 – 2026)</span>
+                        </li>
+                        <li>
+                            <strong>M.Phil. Applied Linguistics</strong>
+                            <span>University of Lahore (2013 – 2015)</span>
+                        </li>
+                        <li>
+                            <strong>Diploma in TEFL</strong>
+                            <span>Allama Iqbal Open University (2012 – 2013)</span>
+                        </li>
+                        <li>
+                            <strong>MA English</strong>
+                            <span>Bahauddin Zakaria University (1995 – 1998)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Workshops Section -->
+                <div class="resume-section">
+                    <h2>Workshops and Training</h2>
+                    <p class="profile-text" style="margin-bottom: 8px;">Resource person for the following workshops at British Education & Training System (Lahore):</p>
+                    <ul class="resume-list">
+                        <li>Teaching Phonetic Symbols (January 12–13, 2004)</li>
+                        <li>Teaching Grammar (January 28, 2004)</li>
+                        <li>Teaching Oral Skills (February 15, 2004)</li>
+                    </ul>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="resume-section">
+                    <h2>Additional Information</h2>
+                    <div class="info-grid">
+                        <div><strong>Marital Status:</strong> Married</div>
+                        <div><strong>Date of Birth:</strong> 30-03-1974</div>
+                        <div style="grid-column: 1 / -1;"><strong>Interests:</strong> Reading and writing, academic research, latest teaching methodologies</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Noman Ali</h3>
+                </div>
+                <div class="footer-links-section">
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                    </div>
+                </div>
+                <div class="footer-links-section">
+                    <h4>Portfolio</h4>
+                    <div class="footer-links">
+                        <a href="artifacts.html">Artifacts</a>
+                        <a href="research.html">Research</a>
+                    </div>
+                </div>
+                <div class="footer-links-section">
+                    <h4>Connect</h4>
+                    <div class="footer-links">
+                        <a href="https://www.linkedin.com/in/noman-ali-8a10b815" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="mailto:mza0140@auburn.edu">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 Noman Ali. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
