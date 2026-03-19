@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>A-Z Events Website - Noman Ali</title>
-    <meta name="description" content="Full lifecycle website design and development for an event planning business." />
+    <title>A to Z Events Web Development - Noman Ali</title>
+    <meta name="description" content="Design and development of a functional website for a real-world client." />
 
     <style>
          :root {
@@ -82,13 +82,13 @@
             padding: 0 20px;
             width: 100%;
         }
-        
+
         /* Main content */
         main {
             flex: 1;
-            padding-bottom: 60px;
+            padding-bottom: 80px;
         }
-
+        
         /* ===== PAGE BANNER / HERO ===== */
         .project-hero {
             background: linear-gradient(135deg, #e0f2f1 0%, #f4fbfb 100%);
@@ -116,18 +116,19 @@
         .project-hero h1 {
             font-size: 48px;
             font-weight: 700;
-            margin: 20px 0 16px 0;
+            margin: 20px 0 20px 0;
             color: var(--text-dark);
             font-family: Georgia, serif;
             letter-spacing: -0.5px;
+            line-height: 1.2;
         }
         
-        .project-hero p {
-            font-size: 18px;
-            max-width: 700px;
-            line-height: 1.7;
+        .project-hero .subtitle {
+            font-size: 20px;
             color: var(--text-gray);
+            line-height: 1.6;
             margin: 0;
+            max-width: 800px;
         }
 
         /* Breadcrumb */
@@ -167,161 +168,112 @@
             color: var(--text-dark);
         }
 
-        /* Main Content Section */
-        .project-main {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--text-gray);
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 40px;
-            transition: color 0.3s ease;
-        }
-        
-        .back-button:hover {
-            color: #2d9a9a;
-            text-decoration: none;
-        }
-        
-        .back-button svg {
-            width: 16px;
-            height: 16px;
-            transition: transform 0.3s ease;
-        }
-        
-        .back-button:hover svg {
-            transform: translateX(-4px);
-        }
-        
-        .article-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .article-intro {
-            font-size: 18px;
-            color: var(--text-gray);
-            line-height: 1.8;
-            margin-bottom: 40px;
-        }
-        
-        .project-image {
-            width: 100%;
-            border-radius: 12px;
-            margin: 40px 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .project-section {
-            margin: 60px 0;
-        }
-        
-        .project-section h2 {
-            font-size: 28px;
-            font-weight: 700;
-            margin: 0 0 20px 0;
-            color: var(--text-dark);
-            font-family: Georgia, serif;
-        }
-        
-        .project-section p {
-            font-size: 15px;
-            color: var(--text-gray);
-            line-height: 1.8;
-            margin: 0 0 16px 0;
-        }
-
-        /* Key Concepts Grid */
-        .concepts-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin: 30px 0;
-        }
-        
-        .concept-card {
-            padding: 20px;
-            background: #f5f5f5;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-        }
-        
-        .concept-card h3 {
-            font-size: 15px;
-            font-weight: 600;
-            margin: 0 0 10px 0;
-            color: var(--text-dark);
-        }
-        
-        .concept-card p {
-            font-size: 13px;
-            color: var(--text-gray);
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        /* Design Process List */
-        .process-list {
-            list-style: none;
-            padding: 0;
-            margin: 30px 0;
-        }
-        
-        .process-list li {
+        /* Keywords Bullet List */
+        .keywords-bullet-list {
             display: flex;
-            gap: 16px;
-            margin-bottom: 20px;
-            font-size: 14px;
-            color: var(--text-gray);
-            line-height: 1.6;
-        }
-        
-        .process-number {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 28px;
-            height: 28px;
-            min-width: 28px;
-            border-radius: 50%;
-            background: rgba(45, 154, 154, 0.1);
-            color: #2d9a9a;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        /* Skills Bullet List */
-        .skills-bullet-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 16px;
+            flex-wrap: wrap;
+            gap: 12px 24px;
             list-style: none;
             padding: 0;
             margin: 24px 0 0 0;
         }
 
-        .skills-bullet-list li {
+        .keywords-bullet-list li {
             font-size: 15px;
-            color: var(--text-dark);
+            color: var(--text-gray);
             display: flex;
             align-items: center;
+            font-weight: 500;
         }
 
-        .skills-bullet-list li::before {
+        .keywords-bullet-list li::before {
             content: '';
             display: inline-block;
             width: 8px;
             height: 8px;
             background-color: var(--header-teal);
             border-radius: 50%;
-            margin-right: 12px;
+            margin-right: 10px;
+        }
+
+        /* Article Content */
+        .project-main {
+            padding: 60px 0;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ffffff;
+            color: var(--header-teal);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+            margin-bottom: 40px;
+        }
+
+        .btn-back:hover {
+            color: var(--header-dark-teal);
+            transform: translateX(-4px);
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        
+        .btn-back svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .citation-link {
+            color: var(--brand);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            border-bottom: 1px dotted var(--brand);
+        }
+
+        .citation-link:hover {
+            color: var(--header-dark-teal);
+            border-bottom-color: var(--header-dark-teal);
+        }
+
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .project-image {
+            width: 100%;
+            border-radius: 12px;
+            margin: 10px 0 50px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-section {
+            margin: 0 0 50px 0;
+        }
+
+        .article-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+            color: var(--text-dark);
+            font-family: Georgia, serif;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .article-section p {
+            font-size: 17px;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin: 0 0 20px 0;
         }
 
         /* CTA Card */
@@ -348,6 +300,7 @@
             font-weight: 600;
             font-size: 14px;
             transition: color 0.3s ease;
+            text-decoration: none;
         }
         
         .cta-link:hover {
@@ -359,45 +312,49 @@
             width: 20px;
             height: 20px;
         }
-        
-        @media (max-width: 1024px) {
-            .project-main {
-                padding: 60px 24px;
-            }
+
+        /* References section (Hanging Indent) */
+        .reference-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .reference-list li {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            padding-left: 36px;
+            text-indent: -36px;
+            transition: background-color 0.5s ease;
+            border-radius: 4px;
+        }
+
+        .reference-list li:target {
+            background-color: rgba(45, 154, 154, 0.15);
+            box-shadow: 0 0 0 8px rgba(45, 154, 154, 0.15);
         }
         
         @media (max-width: 768px) {
             .project-hero {
-                padding: 60px 20px 40px;
+                padding: 80px 20px 60px;
             }
             .project-hero h1 {
                 font-size: 36px;
             }
-            .project-hero p {
-                font-size: 16px;
-            }
-            .breadcrumb {
-                font-size: 13px;
-                margin-bottom: 20px;
-            }
-            .project-main {
-                padding: 40px 20px;
-            }
-            .project-section h2 {
-                font-size: 26px;
-            }
-            .project-section h3 {
+            .project-hero .subtitle {
                 font-size: 18px;
             }
-            .project-image {
-                margin: 32px 0;
+            .breadcrumb {
+                font-size: 12px;
+                margin-bottom: 20px;
             }
-            .concepts-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .article-section h2 {
+                font-size: 24px;
             }
-            .concept-card {
-                padding: 24px;
+            .article-section p {
+                font-size: 16px;
             }
         }
         
@@ -406,46 +363,31 @@
                 padding: 0 16px;
             }
             .project-hero {
-                padding: 50px 16px;
+                padding: 60px 16px 40px;
             }
             .project-hero h1 {
                 font-size: 28px;
             }
-            .project-hero p {
-                font-size: 15px;
+            .project-hero .subtitle {
+                font-size: 16px;
             }
             .breadcrumb {
                 font-size: 12px;
                 margin-bottom: 16px;
             }
             .project-main {
-                padding: 40px 16px;
+                padding: 40px 0;
             }
-            .project-section {
-                margin-bottom: 40px;
-            }
-            .project-section h2 {
+            .article-section h2 {
                 font-size: 22px;
-                margin-bottom: 16px;
             }
-            .project-section h3 {
-                font-size: 16px;
+            .article-section p {
+                font-size: 15px;
             }
-            .project-section p,
-            .process-list li {
+            .reference-list li {
                 font-size: 14px;
-            }
-            .project-image {
-                margin: 24px 0;
-            }
-            .concept-card {
-                padding: 20px;
-            }
-            .concept-card h3 {
-                font-size: 16px;
-            }
-            .concept-card p {
-                font-size: 13px;
+                padding-left: 24px;
+                text-indent: -24px;
             }
         }
     </style>
@@ -459,97 +401,82 @@
 
     <!-- Main Content -->
     <main id="main">
-        <!-- Hero Section / Page Cover -->
-        <div class="project-hero">
+        <!-- Hero Section -->
+        <section class="project-hero">
             <div class="container">
                 <nav class="breadcrumb">
                     <a href="index.html">Home</a>
                     <span class="separator">/</span>
                     <a href="artifacts.html">Artifacts</a>
                     <span class="separator">/</span>
-                    <span class="current">A-Z Events Website</span>
+                    <span class="current">A to Z Events Web Development</span>
                 </nav>
-                <h1>A-Z Events Website</h1>
-                <p>Full lifecycle website design and development for an event planning business, from requirements to deployment.</p>
+                
+                <h1>A to Z Events Web Development</h1>
+                <p class="subtitle">
+                    This project details the design and development of a functional website for a real-world client, framing web development as a rhetorical act of translation that balances client identity, usability, and technical constraints.
+                </p>
+                
+                <ul class="keywords-bullet-list">
+                    <li>Application</li>
+                    <li>Web Development</li>
+                    <li>User Experience</li>
+                    <li>Client Advocacy</li>
+                </ul>
             </div>
-        </div>
+        </section>
 
-        <!-- Project Main Content -->
+        <!-- Article Content -->
         <div class="project-main">
-            <a href="artifacts.html" class="back-button">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 12H5M12 19l-7-7 7-7" />
-                </svg> Back to Artifacts
-            </a>
+            <div class="container">
+                <div class="article-content">
 
-            <div class="article-content">
-                <p class="article-intro">A client-based web development project for A-Z Events, an inclusive event planning and coordination business, demonstrating the full lifecycle from requirements gathering to deployment.</p>
-
-                <img src="Artifacts&Research/A-to-Z-Events-Web-Pics-pdf-Google-Drive-02-04-2026_06_55_PM.png" alt="A-Z Events Website - Inclusive Event Planning and Coordination" class="project-image" />
-
-                <section class="project-section">
-                    <h2>Project Phases</h2>
-                    <ol class="process-list">
-                        <li>
-                            <span class="process-number">1</span>
-                            <div><strong>Discovery & Requirements:</strong> Client interviews, needs assessment, audience analysis, and project scoping.</div>
-                        </li>
-                        <li>
-                            <span class="process-number">2</span>
-                            <div><strong>Design & Planning:</strong> Wireframing, visual design concepts, content strategy, and technical specifications.</div>
-                        </li>
-                        <li>
-                            <span class="process-number">3</span>
-                            <div><strong>Development:</strong> HTML/CSS implementation, responsive design, accessibility compliance, and testing.</div>
-                        </li>
-                        <li>
-                            <span class="process-number">4</span>
-                            <div><strong>Delivery & Documentation:</strong> Client handoff, user documentation, and maintenance guidelines.</div>
-                        </li>
-                    </ol>
-                </section>
-
-                <section class="project-section">
-                    <h2>Technical Implementation</h2>
-                    <div class="concepts-grid">
-                        <div class="concept-card">
-                            <h3>Semantic HTML</h3>
-                            <p>Proper document structure for accessibility and SEO</p>
-                        </div>
-                        <div class="concept-card">
-                            <h3>CSS Styling</h3>
-                            <p>Modern layout techniques with responsive design</p>
-                        </div>
-                        <div class="concept-card">
-                            <h3>Accessibility</h3>
-                            <p>WCAG compliance, keyboard navigation, screen reader support</p>
-                        </div>
-                        <div class="concept-card">
-                            <h3>Performance</h3>
-                            <p>Optimized loading, efficient code structure</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="project-section">
-                    <h2>Skills Demonstrated</h2>
-                    <ul class="skills-bullet-list">
-                        <li>Client Communication</li>
-                        <li>Project Management</li>
-                        <li>HTML/CSS</li>
-                        <li>Responsive Design</li>
-                        <li>Accessibility</li>
-                        <li>Documentation</li>
-                    </ul>
-                </section>
-
-                <div class="cta-card">
-                    <h3>View Project Documentation</h3>
-                    <a href="https://drive.google.com/file/d/1B9ZLdC-qHdxBvhpr2UI28q17pmmaR4lk/view?usp=drive_link" target="_blank" rel="noopener" class="cta-link">
+                    <a href="artifacts.html" class="btn-back">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
-                        </svg> View Website Documentation (PDF)
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg> Back to Artifacts
                     </a>
+
+                    <!-- Project Image -->
+                    <img src="Artifacts&Research/A-to-Z-Events-Web-Pics-pdf-Google-Drive-02-04-2026_06_55_PM.png" alt="A to Z Events Website Overview" class="project-image" />
+
+                    <section class="article-section">
+                        <h2>Project Description</h2>
+                        <p>This web development project, completed for Dr. Stewart Whittemore’s ENGL 7060 course, involved designing a functional website for a real-world client, A to Z Events. Moving beyond a standard technical assignment, this project served as a critical site of transition from theoretical technical communication to applied, client-centered design. The core objective was translating the client’s emerging brand identity, service structure, and business goals into a navigable digital environment that the client could meaningfully own. Ultimately, this project demonstrates that web development is not merely about building a site, but about empowering clients and shaping how users engage with structured content.</p>
+                    </section>
+
+                    <section class="article-section">
+                        <h2>Rhetorical and Technical Decisions</h2>
+                        <p>A primary challenge at the start of the project involved rhetorically translating the client's clearly defined service identity and visual preferences into a highly usable information structure. I made technical and design decisions regarding page hierarchy, navigation, and service descriptions to ensure the homepage was visually inviting without overwhelming the user. During this process, I realized that usability must serve as the primary rhetorical metric; a visually polished site fails if users cannot smoothly locate information or complete tasks.</p>
+                        
+                        <p>Furthermore, I had to negotiate competing priorities: my own design standards, the client's specific requests, and the technical limitations of building an accessible site. To ensure long-term sustainability and client advocacy, my final technical decision was to create a comprehensive maintenance guide and train the client on the backend. This empowered the client to act independently within the system, transforming the deliverable from a static product into a usable, ongoing tool.</p>
+                    </section>
+
+                    <section class="article-section">
+                        <h2>Theoretical Connections</h2>
+                        <p>To ground my understanding of visual and structural design, I relied on <a href="#ref-kostelnick" class="citation-link">Kostelnick and Roberts (2011)</a>, who emphasize that meaning in technical communication emerges fundamentally through design choices that dictate how users engage with content. Their principles of professional communication design reinforced my focus on accessibility and clarity to support long-term user engagement and empowerment.</p>
+
+                        <p>When translating the client's identity into a digital environment, <a href="#ref-redish" class="citation-link">Redish (2012)</a> guided my understanding that a website does not simply "display" information, but rather organizes and frames it. Her work reinforced my realization that clarity and immediate accessibility must be prioritized for successful task completion in digital spaces. Finally, as I navigated the inevitable tensions between design standards, client requests, and technical constraints, <a href="#ref-spinuzzi" class="citation-link">Spinuzzi's (2015)</a> framework of networked activity helped me understand that workplace communication is distributed across networks of people, tools, and practices. Through this lens, I recognized that successful project outcomes emerge through active negotiation rather than simple linear execution.</p>
+                    </section>
+
+                    <div class="cta-card">
+                        <h3>View Project Documentation</h3>
+                        <a href="https://drive.google.com/file/d/1B9ZLdC-qHdxBvhpr2UI28q17pmmaR4lk/view?usp=drive_link" target="_blank" rel="noopener" class="cta-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                            </svg> View Website Documentation (PDF)
+                        </a>
+                    </div>
+
+                    <section class="article-section">
+                        <h2>References</h2>
+                        <ul class="reference-list">
+                            <li id="ref-kostelnick">Kostelnick, C., & Roberts, D. (2011). <em>Designing visual language: Strategies for professional communicators</em>. Allyn & Bacon.</li>
+                            <li id="ref-redish">Redish, J. (2012). <em>Letting go of the words: Writing web content that works</em>. Morgan Kaufmann.</li>
+                            <li id="ref-spinuzzi">Spinuzzi, C. (2015). <em>All edge: Inside the new workplace networks</em>. University of Chicago Press.</li>
+                        </ul>
+                    </section>
+
                 </div>
             </div>
         </div>
