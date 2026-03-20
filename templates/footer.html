@@ -6,23 +6,32 @@
                 <div class="footer-links">
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
-                </div>
-            </div>
-            <div class="footer-links-section">
-                <h4>Portfolio</h4>
-                <div class="footer-links">
-                    <a href="artifacts.html">Artifacts</a>
-                    <a href="research.html">Research</a>
-                </div>
-            </div>
-            <div class="footer-links-section">
-                <h4>Connect</h4>
-                <div class="footer-links">
+                    <a href="resume.html">Resume</a>
                     <a href="https://www.linkedin.com/in/noman-ali-8a10b815" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="" target="_blank" rel="noopener noreferrer">Email: mza0140@auburn.edu</a>
+                    <a href="mailto:mza0140@auburn.edu">Email Me</a>
+                </div>
+            </div>
+
+            <div class="footer-links-section">
+                <h4>Artifacts & Design</h4>
+                <div class="footer-links">
+                    <a href="car-safety-infographic.html">Car Safety Infographic</a>
+                    <a href="recipe-book.html">Culinary Chronicles</a>
+                    <a href="A-Z-Events.html">A to Z Events Website</a>
+                    <a href="artifacts.html" style="color: #ffffff; font-weight: 600; margin-top: 8px;">View All Artifacts &rarr;</a>
+                </div>
+            </div>
+
+            <div class="footer-links-section">
+                <h4>Research</h4>
+                <div class="footer-links">
+                    <a href="social-media-activism.html">Social Media Activism</a>
+                    <a href="upf-rhetorical-analysis.html">UPF Rhetorical Analysis</a>
+                    <a href="research.html" style="color: #ffffff; font-weight: 600; margin-top: 8px;">View All Research &rarr;</a>
                 </div>
             </div>
         </div>
+        
         <div class="footer-bottom">
             © <span id="year"></span> Noman Ali. All rights reserved.
         </div>
@@ -33,21 +42,18 @@
             background: linear-gradient(135deg, #3ab5b5 0%, #2d9a9a 50%, #1f7a7a 100%);
             padding: 50px 0 30px;
             color: #ffffff;
+            margin-top: 0;
             font-family: var(--sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);
         }
         
         .footer-content {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 50px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
             margin-bottom: 40px;
-        }
-
-        .footer-about h3 {
-            font-size: 24px;
-            font-weight: 600;
-            margin: 0 0 16px 0;
-            color: #ffffff;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .footer-links-section h4 {
@@ -55,6 +61,8 @@
             font-weight: 600;
             margin: 0 0 20px 0;
             color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .footer-links {
@@ -85,10 +93,19 @@
             color: rgba(255, 255, 255, 0.8);
         }
 
+        /* Tablet Layout */
+        @media (max-width: 950px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 700px;
+            }
+        }
+
+        /* Mobile Layout */
         @media (max-width: 768px) {
             .footer-content {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 40px;
                 text-align: center;
             }
             .footer-links {
@@ -96,14 +113,4 @@
             }
         }
     </style>
-
-    <script>
-        // Automatically update the copyright year
-        document.addEventListener("DOMContentLoaded", function () {
-            const yearSpan = document.getElementById("year");
-            if (yearSpan) {
-                yearSpan.textContent = new Date().getFullYear();
-            }
-        });
-    </script>
 </footer>
