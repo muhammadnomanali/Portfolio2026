@@ -10,28 +10,32 @@ const HEADER_HTML = `
                     <a href="index.html">HOME</a>
                     <a href="about.html">ABOUT</a>
                     
-                    <!-- Artifacts Dropdown -->
+                    <!-- Combined Work Dropdown -->
                     <div class="dropdown">
                         <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
-                            ARTIFACTS <span class="arrow">▼</span>
+                            Portfolio <span class="arrow">▼</span>
                         </button>
                         <div class="dropdown-content">
-                            <a href="artifacts.html" class="overview-link">View All Artifacts</a>
-                            <a href="car-safety-infographic.html">Car Safety Infographic</a>
-                            <a href="recipe-book.html">Culinary Chronicles</a>
-                            <a href="A-Z-Events.html">A to Z Events Website</a>
-                        </div>
-                    </div>
+                            
+                            <!-- Artifacts Nested Dropdown -->
+                            <div class="nested-dropdown">
+                                <a href="artifacts.html">Artifacts & Design <span class="arrow right-arrow">▶</span></a>
+                                <div class="nested-dropdown-content">
+                                    <a href="car-safety-infographic.html">Car Safety Infographic</a>
+                                    <a href="recipe-book.html">Culinary Chronicles</a>
+                                    <a href="A-Z-Events.html">A to Z Events Website</a>
+                                </div>
+                            </div>
 
-                    <!-- Research Dropdown -->
-                    <div class="dropdown">
-                        <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
-                            RESEARCH <span class="arrow">▼</span>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="research.html" class="overview-link">View All Research</a>
-                            <a href="social-media-activism.html">Social Media Activism</a>
-                            <a href="upf-rhetorical-analysis.html">UPF Rhetorical Analysis</a>
+                            <!-- Research Nested Dropdown -->
+                            <div class="nested-dropdown">
+                                <a href="research.html">Research <span class="arrow right-arrow">▶</span></a>
+                                <div class="nested-dropdown-content">
+                                    <a href="social-media-activism.html">Social Media Activism</a>
+                                    <a href="upf-rhetorical-analysis.html">UPF Rhetorical Analysis</a>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
@@ -46,7 +50,7 @@ const HEADER_HTML = `
         <div class="container">
             <div class="brand-content">
                 <h1 class="brand-name">Noman Ali</h1>
-                <p class="brand-tagline">Intercultural Practice & Technical Communication</p>
+                <p class="brand-tagline">Intercultural Practice in Technical Communication</p>
             </div>
         </div>
     </div>
@@ -59,6 +63,7 @@ const HEADER_HTML = `
             top: 0;
             z-index: 50;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            font-family: var(--sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);
         }
 
         .header-nav-row {
@@ -130,7 +135,7 @@ const HEADER_HTML = `
             background-color: rgba(255, 255, 255, 0.15);
         }
 
-        /* Invisible bridge to prevent hover loss */
+        /* Invisible bridge to prevent hover loss between button and dropdown */
         .dropdown::after {
             content: '';
             position: absolute;
@@ -151,11 +156,11 @@ const HEADER_HTML = `
             top: 100%;
             left: 0;
             margin-top: 2px;
-            overflow: hidden;
+            overflow: visible; /* Changed from hidden to allow nested dropdown to escape */
             border: 1px solid var(--border-color, #e5e5e5);
         }
 
-        .dropdown-content a {
+        .dropdown-content > a, .nested-dropdown > a {
             color: var(--text-dark, #1a1a1a) !important;
             padding: 12px 16px;
             display: block;
@@ -165,21 +170,62 @@ const HEADER_HTML = `
             font-family: var(--sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);
         }
 
-        /* Highlight the main category links in the dropdown */
-        .dropdown-content a.overview-link {
-            font-weight: 700;
-            border-bottom: 1px solid var(--border-color, #e5e5e5);
-            color: var(--header-teal, #2d9a9a) !important;
-            background-color: #f4fbfb;
-        }
-
-        .dropdown-content a:hover {
+        .dropdown-content a:hover, .nested-dropdown > a:hover {
             background-color: #f0f9f8 !important;
             color: var(--header-teal, #2d9a9a) !important;
         }
 
         .dropdown:hover .dropdown-content {
             display: block;
+        }
+
+        /* Nested Dropdown Styles */
+        .nested-dropdown {
+            position: relative;
+        }
+
+        .right-arrow {
+            float: right;
+            font-size: 10px;
+            margin-top: 4px;
+        }
+
+        .nested-dropdown-content {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: -1px;
+            background-color: #ffffff;
+            min-width: 240px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+            z-index: 2;
+            border-radius: 8px;
+            border: 1px solid var(--border-color, #e5e5e5);
+            overflow: hidden;
+        }
+
+        .nested-dropdown-content a {
+            color: var(--text-dark, #1a1a1a) !important;
+            padding: 12px 16px;
+            display: block;
+            text-transform: none;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .nested-dropdown:hover .nested-dropdown-content {
+            display: block;
+        }
+
+        /* Invisible bridge for nested dropdown */
+        .nested-dropdown::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 20px;
+            height: 100%;
+            transform: translateX(-100%);
         }
 
         .header-brand-row {
@@ -211,6 +257,7 @@ const HEADER_HTML = `
             .brand-tagline { font-size: 15px; }
             .links { gap: 15px; }
             .links a, .dropbtn { font-size: 12px; padding: 5px 10px; }
+            
             .dropdown-content {
                 position: relative;
                 top: 0;
@@ -220,18 +267,39 @@ const HEADER_HTML = `
                 margin-left: 15px;
                 min-width: auto;
             }
-            .dropdown-content a {
+            .dropdown-content > a, .nested-dropdown > a {
                 color: rgba(255,255,255,0.85) !important;
                 padding: 8px 12px;
             }
-            .dropdown-content a.overview-link {
-                color: #ffffff !important;
-                border-bottom: 1px solid rgba(255,255,255,0.2);
-                background-color: transparent;
-            }
-            .dropdown-content a:hover {
+            .dropdown-content a:hover, .nested-dropdown > a:hover {
                 background-color: transparent !important;
                 color: #ffffff !important;
+            }
+            
+            /* Nested Dropdown Mobile Fixes */
+            .nested-dropdown-content {
+                position: relative;
+                left: 0;
+                top: 0;
+                box-shadow: none;
+                border: none;
+                background-color: transparent;
+                margin-left: 15px;
+                min-width: auto;
+            }
+            .nested-dropdown-content a {
+                color: rgba(255,255,255,0.7) !important;
+                padding: 6px 12px;
+                font-size: 13px;
+                border-left: 1px solid rgba(255,255,255,0.2);
+                border-radius: 0;
+            }
+            .nested-dropdown-content a:hover {
+                color: #ffffff !important;
+            }
+            .right-arrow {
+                transform: rotate(90deg);
+                margin-top: 2px;
             }
         }
 
