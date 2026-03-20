@@ -7,14 +7,32 @@
                     <a href="index.html">HOME</a>
                     <a href="about.html">ABOUT</a>
                     
-                    <!-- Combined Dropdown for Work & Research -->
+                    <!-- Combined Work Dropdown -->
                     <div class="dropdown">
                         <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
-                            WORK <span class="arrow">▼</span>
+                            Portfolio <span class="arrow">▼</span>
                         </button>
                         <div class="dropdown-content">
-                            <a href="artifacts.html">Artifacts and Design</a>
-                            <a href="research.html">Research</a>
+                            
+                            <!-- Artifacts Nested Dropdown -->
+                            <div class="nested-dropdown">
+                                <a href="artifacts.html">Artifacts & Design <span class="arrow right-arrow">▶</span></a>
+                                <div class="nested-dropdown-content">
+                                    <a href="car-safety-infographic.html">Car Safety Infographic</a>
+                                    <a href="recipe-book.html">Culinary Chronicles</a>
+                                    <a href="A-Z-Events.html">A to Z Events Website</a>
+                                </div>
+                            </div>
+
+                            <!-- Research Nested Dropdown -->
+                            <div class="nested-dropdown">
+                                <a href="research.html">Research <span class="arrow right-arrow">▶</span></a>
+                                <div class="nested-dropdown-content">
+                                    <a href="social-media-activism.html">Social Media Activism</a>
+                                    <a href="upf-rhetorical-analysis.html">UPF Rhetorical Analysis</a>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
@@ -29,7 +47,7 @@
         <div class="container">
             <div class="brand-content">
                 <h1 class="brand-name">Noman Ali</h1>
-                <p class="brand-tagline">Intercultural Practice in Technical and Professional Communication</p>
+                <p class="brand-tagline">Intercultural Practice & Technical Communication</p>
             </div>
         </div>
     </div>
@@ -128,18 +146,18 @@
             display: none;
             position: absolute;
             background-color: #ffffff;
-            min-width: 200px;
+            min-width: 220px;
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
             z-index: 1;
             border-radius: 8px;
             top: 100%;
             left: 0;
-            margin-top: 2px; /* Reduced to keep it tight */
-            overflow: hidden;
+            margin-top: 2px;
+            overflow: visible; /* Changed from hidden to allow nested dropdown to escape */
             border: 1px solid var(--border-color, #e5e5e5);
         }
 
-        .dropdown-content a {
+        .dropdown-content > a, .nested-dropdown > a {
             color: var(--text-dark, #1a1a1a) !important;
             padding: 12px 16px;
             display: block;
@@ -149,13 +167,62 @@
             font-family: var(--sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);
         }
 
-        .dropdown-content a:hover {
+        .dropdown-content a:hover, .nested-dropdown > a:hover {
             background-color: #f0f9f8 !important;
             color: var(--header-teal, #2d9a9a) !important;
         }
 
         .dropdown:hover .dropdown-content {
             display: block;
+        }
+
+        /* Nested Dropdown Styles */
+        .nested-dropdown {
+            position: relative;
+        }
+
+        .right-arrow {
+            float: right;
+            font-size: 10px;
+            margin-top: 4px;
+        }
+
+        .nested-dropdown-content {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: -1px;
+            background-color: #ffffff;
+            min-width: 240px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+            z-index: 2;
+            border-radius: 8px;
+            border: 1px solid var(--border-color, #e5e5e5);
+            overflow: hidden;
+        }
+
+        .nested-dropdown-content a {
+            color: var(--text-dark, #1a1a1a) !important;
+            padding: 12px 16px;
+            display: block;
+            text-transform: none;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .nested-dropdown:hover .nested-dropdown-content {
+            display: block;
+        }
+
+        /* Invisible bridge for nested dropdown */
+        .nested-dropdown::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 20px;
+            height: 100%;
+            transform: translateX(-100%);
         }
 
         .header-brand-row {
@@ -187,6 +254,7 @@
             .brand-tagline { font-size: 15px; }
             .links { gap: 15px; }
             .links a, .dropbtn { font-size: 12px; padding: 5px 10px; }
+            
             .dropdown-content {
                 position: relative;
                 top: 0;
@@ -196,13 +264,39 @@
                 margin-left: 15px;
                 min-width: auto;
             }
-            .dropdown-content a {
+            .dropdown-content > a, .nested-dropdown > a {
                 color: rgba(255,255,255,0.85) !important;
                 padding: 8px 12px;
             }
-            .dropdown-content a:hover {
+            .dropdown-content a:hover, .nested-dropdown > a:hover {
                 background-color: transparent !important;
                 color: #ffffff !important;
+            }
+            
+            /* Nested Dropdown Mobile Fixes */
+            .nested-dropdown-content {
+                position: relative;
+                left: 0;
+                top: 0;
+                box-shadow: none;
+                border: none;
+                background-color: transparent;
+                margin-left: 15px;
+                min-width: auto;
+            }
+            .nested-dropdown-content a {
+                color: rgba(255,255,255,0.7) !important;
+                padding: 6px 12px;
+                font-size: 13px;
+                border-left: 1px solid rgba(255,255,255,0.2);
+                border-radius: 0;
+            }
+            .nested-dropdown-content a:hover {
+                color: #ffffff !important;
+            }
+            .right-arrow {
+                transform: rotate(90deg);
+                margin-top: 2px;
             }
         }
 
