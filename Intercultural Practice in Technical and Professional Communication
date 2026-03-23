@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Intercultural Practice in TPC - Noman Ali</title>
+    <meta name="description" content="Rationale and Evidence for Intercultural TPC Positioning." />
+
+    <style>
+         :root {
+            --bg: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-gray: #666666;
+            --text-light: #999999;
+            --brand: #16a34a;
+            --header-teal: #2d9a9a;
+            --border-color: #e5e5e5;
+            --card-bg: #f9f9f9;
+            --radius: 12px;
+            --max-width: 1200px;
+            --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        html {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            width: 100%;
+        }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-dark);
+            background-color: var(--bg);
+            line-height: 1.6;
+            position: relative;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .skip-link {
+            position: absolute;
+            left: -999px;
+            background: var(--brand);
+            color: white;
+            padding: 10px;
+            z-index: 100;
+        }
+        
+        .skip-link:focus {
+            left: 16px;
+            top: 16px;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        /* Main content */
+        main {
+            flex: 1;
+            padding-bottom: 80px;
+        }
+        
+        /* ===== PAGE BANNER / HERO ===== */
+        .project-hero {
+            background: linear-gradient(135deg, #e0f2f1 0%, #f4fbfb 100%);
+            padding: 100px 20px 80px;
+            position: relative;
+            border-bottom: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        /* Subtle white fade to make text ultra-readable over the pattern */
+        .project-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(45, 154, 154, 0.1) 2px, transparent 2px);
+            background-size: 24px 24px;
+            z-index: 0;
+        }
+        
+        .project-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .project-hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 20px 0 20px 0;
+            color: var(--text-dark);
+            font-family: Georgia, serif;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        
+        .project-hero .subtitle {
+            font-size: 20px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin: 0;
+            max-width: 800px;
+        }
+
+        .memo-header {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            max-width: 600px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            font-family: var(--sans);
+        }
+
+        .memo-header p {
+            margin: 0 0 8px 0;
+            font-size: 15px;
+            color: var(--text-dark);
+        }
+
+        .memo-header p:last-child {
+            margin-bottom: 0;
+        }
+
+        .memo-header strong {
+            color: var(--header-teal);
+            display: inline-block;
+            width: 80px;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            display: inline-flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 13px;
+            color: var(--text-gray);
+            background: rgba(255, 255, 255, 0.8);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .breadcrumb a {
+            color: var(--header-teal);
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--header-dark-teal);
+            text-decoration: none;
+        }
+        
+        .breadcrumb .separator {
+            color: var(--text-light);
+        }
+        
+        .breadcrumb .current {
+            color: var(--text-dark);
+        }
+
+        /* Article Content */
+        .project-main {
+            padding: 60px 0;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ffffff;
+            color: var(--header-teal);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+            margin-bottom: 40px;
+        }
+
+        .btn-back:hover {
+            color: var(--header-dark-teal);
+            transform: translateX(-4px);
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        
+        .btn-back svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .citation-link {
+            color: var(--brand);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            border-bottom: 1px dotted var(--brand);
+        }
+
+        .citation-link:hover {
+            color: var(--header-dark-teal);
+            border-bottom-color: var(--header-dark-teal);
+        }
+
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-section {
+            margin: 0 0 50px 0;
+        }
+
+        .article-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+            color: var(--text-dark);
+            font-family: Georgia, serif;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .article-section h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 30px 0 15px 0;
+            color: var(--header-teal);
+        }
+
+        .article-section p {
+            font-size: 17px;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin: 0 0 20px 0;
+        }
+
+        /* References section (Hanging Indent) */
+        .reference-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .reference-list li {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            padding-left: 36px;
+            text-indent: -36px;
+            transition: background-color 0.5s ease;
+            border-radius: 4px;
+        }
+
+        .reference-list li:target {
+            background-color: rgba(45, 154, 154, 0.15);
+            box-shadow: 0 0 0 8px rgba(45, 154, 154, 0.15);
+        }
+        
+        @media (max-width: 768px) {
+            .project-hero {
+                padding: 80px 20px 60px;
+            }
+            .project-hero h1 {
+                font-size: 36px;
+            }
+            .project-hero .subtitle {
+                font-size: 18px;
+            }
+            .breadcrumb {
+                font-size: 12px;
+                margin-bottom: 20px;
+            }
+            .article-section h2 {
+                font-size: 24px;
+            }
+            .article-section h3 {
+                font-size: 18px;
+            }
+            .article-section p {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+            .project-hero {
+                padding: 60px 16px 40px;
+            }
+            .project-hero h1 {
+                font-size: 28px;
+            }
+            .project-hero .subtitle {
+                font-size: 16px;
+            }
+            .breadcrumb {
+                font-size: 12px;
+                margin-bottom: 16px;
+            }
+            .project-main {
+                padding: 40px 0;
+            }
+            .article-section h2 {
+                font-size: 22px;
+            }
+            .article-section p {
+                font-size: 15px;
+            }
+            .reference-list li {
+                font-size: 14px;
+                padding-left: 24px;
+                text-indent: -24px;
+            }
+            .memo-header p {
+                font-size: 14px;
+            }
+            .memo-header strong {
+                width: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header Placeholder (Loaded via JS) -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Hero Section -->
+        <section class="project-hero">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="separator">/</span>
+                    <span class="current">Rationale Memo</span>
+                </nav>
+                
+                <h1>Intercultural Practice in Technical and Professional Communication</h1>
+                <p class="subtitle">
+                    Rationale and Evidence for Intercultural TPC Positioning
+                </p>
+
+                <div class="memo-header">
+                    <p><strong>To:</strong> Portfolio Review Committee Chair</p>
+                    <p><strong>Date:</strong> March 21, 2026</p>
+                    <p><strong>Subject:</strong> Rationale and Evidence for Intercultural TPC Positioning</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Article Content -->
+        <div class="project-main">
+            <div class="container">
+                <div class="article-content">
+
+                    <a href="index.html" class="btn-back">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg> Back to Home
+                    </a>
+
+                    <section class="article-section">
+                        <h2>Introduction</h2>
+                        <p>This memo positions my portfolio within intercultural Technical and Professional Communication by adopting assemblage as its organizing framework. Drawing on <a href="#ref-meloncon" class="citation-link">Melonçon and Schreiber's</a> articulation of TPC's collective identity as assemblage, I argue that intercultural communication functions as a key component within that identity — one that is sustained, maintained, and activated under specific professional conditions. Rather than presenting intercultural competence as a fixed attribute, I frame my work as participation in the ongoing assembly of TPC's collective identity. I first outline how assemblage explains the field's flexibility and coherence, then define sustainability, reflection, maintenance, and activation as dynamic processes within that framework, and finally demonstrate how these processes operate across my portfolio artifacts.</p>
+                        
+                        <p>Technical and Professional Communication faces a central challenge: it operates across diverse, global, and intercultural contexts, yet lacks a clear explanation for how it maintains a coherent identity without reducing communication to fixed competencies or stable frameworks. As the field expands across institutional, cultural, and technological boundaries, this tension between coherence and fragmentation becomes more pronounced, raising questions about how communication practices remain intelligible and accountable across difference.</p>
+
+                        <p>To address this challenge, this memo uses assemblage not simply as a theoretical description but as a way of identifying how communicative coherence is produced through relationships among practices, contexts, and constraints. Within this framework, intercultural TPC becomes significant not as a separate domain, but as the point at which these relationships are most visible, especially when communication must respond to differences in language, knowledge systems, and power. This orientation allows the portfolio to be read as evidence of how communicative decisions are shaped under these conditions rather than as demonstrations of predefined competence.</p>
+
+                        <p>Assemblage, as a theoretical concept, originates in the collaborative philosophy of Gilles Deleuze and Félix Guattari, who used the French term <em>agencement</em> — best understood as an arrangement or layout of heterogeneous elements — to describe how bodies, discourses, affects, material objects, and social forces come together into functional configurations without a fixed center or governing essence <a href="#ref-delanda-2006" class="citation-link">(DeLanda, 2006)</a>. The concept resists both reductionism and holism: no single part determines the whole, and the whole is never simply the sum of its parts. Manuel DeLanda later reformulated this into a "neo-assemblage" theory of social complexity, arguing that components within assemblages retain their individual properties while also producing emergent collective capacities that could not be predicted from those properties alone <a href="#ref-delanda-2016" class="citation-link">(DeLanda, 2016)</a>.</p>
+                        
+                        <p>From these philosophical foundations, assemblage has branched into several distinct but related applications within Technical and Professional Communication and intercultural scholarship. <a href="#ref-meloncon" class="citation-link">Melonçon and Schreiber (2021)</a> apply it to TPC's disciplinary identity, arguing that the field's coherence is not fixed but produced through the ongoing interaction of evolving components including pedagogy, research, ethics, and professional practice. <a href="#ref-johnson-eilola" class="citation-link">Johnson-Eilola and Selber (2022)</a> extend the Deleuzian version into posthumanist TPC, focusing on how objects, users, and environments form relational assemblages in complex sociotechnical contexts such as makerspaces. <a href="#ref-mattson-2015" class="citation-link">Mattson (2015</a>, <a href="#ref-mattson-2017" class="citation-link">2017)</a> introduces two politically charged offshoots: administrative assemblages, which describe how transnational institutional structures distribute power unevenly in intercultural professional communication, and emancipatory counter-assemblages, which theorize how marginalized communities can build alternative configurations that resist dominant instrumental logics. <a href="#ref-haas" class="citation-link">Haas (2012)</a> exposes the technological, racial, and rhetorical assemblages embedded in mainstream TPC, arguing that dominant professional communication practices reproduce colonial and racial hierarchies that require explicit decolonial critique. Taken together, these offshoots share a common insight: coherence in communication — whether of a discipline, a document, a design system, or a professional practice — is always assembled, always relational, and always open to reconfiguration.</p>
+
+                        <p>Melonçon and Schreiber argue that TPC requires a collective identity flexible enough to account for fragmentation yet stable enough to support shared claims — one they theorize through assemblage, drawing on the relational tradition that runs from Deleuze and Guattari's agencement through DeLanda's neo-assemblage theory into disciplinary and institutional analysis. TPC has long operated by translating specialized knowledge for non-specialist audiences and coordinating communication across professional communities. As the field matured, scholars emphasized that such boundary-crossing is not neutral, since texts and systems shape access, authority, and power <a href="#ref-slack" class="citation-link">(Slack, Miller, and Doak, 1993</a>; <a href="#ref-haas" class="citation-link">Haas, 2012)</a>. Globalization and digital circulation have since intensified this dynamic, prompting intercultural TPC to foreground localization, adaptation, and reflexive attention to positionality and power <a href="#ref-small" class="citation-link">(Small, 2021)</a>.</p>
+                    </section>
+
+                    <section class="article-section">
+                        <h2>Intercultural TPC</h2>
+                        <p><a href="#ref-small" class="citation-link">Small (2021)</a> describes technical and professional communication as a field that regularly crosses disciplinary, linguistic, and cultural boundaries, linking technical expertise with diverse audiences across professional and cultural contexts. Because TPC operates at the intersection of multiple knowledge systems and professional communities, practitioners regularly translate specialized knowledge across differences of language, perspective, and experience. These intersections require practitioners to understand how rhetorical norms vary across cultural and organizational environments <a href="#ref-thatcher" class="citation-link">(Thatcher, 2011)</a> and how different cultural contexts shape the communicative expectations and institutional structures professionals must navigate <a href="#ref-constantinides" class="citation-link">(Constantinides, St. Amant, & Kampf, 2001)</a>.</p>
+
+                        <p>Assemblage is the conceptual tool that makes this breadth legible. When intercultural communication is understood as a component within the TPC assemblage — rather than a separate domain adjacent to it — the question for practitioners shifts from whether they possess intercultural competence to under what conditions intercultural practice becomes activated, and how it is maintained, reflected upon, and sustained over time. This reframing turns intercultural work from a fixed credential into a dynamic process.</p>
+
+                        <p>I adopt the intercultural core described by Small — localize, adapt, reflect — as a practical lens for reading my portfolio. Across projects, I center host community contexts and stakeholder relationships, revise genres and media in response to situated constraints, and make positionality and power visible through explicit metacommentary. Reviews of intercultural TPC scholarship identify these three practices as recurring anchors across research traditions <a href="#ref-scott" class="citation-link">(Scott, 2010)</a>.</p>
+
+                        <p>In this memo, identity operates at three interrelated levels: the collective identity of TPC as an assemblage of evolving components; the identity of my portfolio as a site where those components are enacted; and my professional identity as a practitioner situated within and contributing to those assemblages. Treating identity as assembled rather than fixed allows me to position my work not as a static representation of intercultural competence, but as ongoing participation in sustaining and activating intercultural components of the field.</p>
+
+                        <p>These three levels of identity — disciplinary, portfolio, and practitioner — are mutually reinforcing. Each gains meaning from its relations with the others: the practitioner's rhetorical choices are legible only within the portfolio's configuration, and the portfolio's coherence is readable only within the larger assemblage of TPC's evolving collective identity. Understanding how intercultural communication operates across these levels requires first mapping the specific processes — sustainability, reflection, maintenance, and activation — through which that assemblage is structured.</p>
+
+                        <p>The trajectory traced by scholars from authoritative, positivist models of cultural analysis toward situated, reflexive, and decolonial methodologies pushes TPC toward practices that are responsive to local stakeholder contexts, tolerant of uncertainty, and explicit about ethical tradeoffs <a href="#ref-agboka" class="citation-link">(Agboka, 2014</a>; <a href="#ref-haas" class="citation-link">Haas, 2012)</a>. This reorientation aligns with the field's broader turn toward sustainability and social justice as assembled components of TPC's collective identity — components whose maintenance is never automatic but requires deliberate scholarly and pedagogical labor <a href="#ref-doan" class="citation-link">(Doan, 2021)</a>.</p>
+                    </section>
+
+                    <section class="article-section">
+                        <h2>TPC as Assemblage</h2>
+                        <p>Applied to TPC, assemblage means the field has no single defining essence — only a provisional coherence produced by the ongoing interaction of its components: pedagogy, research, workplace practice, ethics, accessibility, globalization, and digital mediation. None of these components alone exhausts TPC's identity; each draws meaning from its relations with the others <a href="#ref-johnson-eilola" class="citation-link">(Johnson-Eilola & Selber, 2022</a>; <a href="#ref-meloncon" class="citation-link">Melonçon & Schreiber, 2021)</a>. This is precisely why the field can absorb new social concerns, methodological developments, and communicative challenges without fragmenting: identity is relational rather than fixed, so components can be added, foregrounded, or recalibrated as conditions change. Scholars have operationalized this insight pedagogically, designing curricula that ask communicators to perform assemblage analysis as a practical method for mapping the posthuman complexity of contemporary sociotechnical environments <a href="#ref-dreher" class="citation-link">(Dreher & Squires, 2023)</a>.</p>
+
+                        <p><strong>Sustainability.</strong> Within this framework, sustainability does not imply permanence or immobility. What appears stable is in fact stabilized through repeated practice, institutional reinforcement, and shared discourse <a href="#ref-mattson-2015" class="citation-link">(Mattson, 2015)</a>. Sustainability names the ongoing process by which the field preserves generative components while remaining open to revision. It acknowledges that collective identity must be continually reassembled in response to shifting technological, geopolitical, and social conditions.</p>
+
+                        <p><strong>Reflection</strong> operates as a critical mechanism within assemblage. It names the field's capacity to interrogate its assumptions, identify exclusions, and recognize ethical limits — including the racial and colonial hierarchies that have historically been obscured within professional communication norms and technological systems <a href="#ref-haas" class="citation-link">(Haas, 2012)</a>. Reflection prevents assemblage from hardening into orthodoxy by making visible the power relations and normative commitments embedded in its components. In this sense, reflection is not ancillary to sustainability; it is the condition that allows sustainable identity to remain responsive rather than rigid.</p>
+
+                        <p><strong>Maintenance</strong> refers to the labor required to sustain and revise the assemblage over time. This includes pedagogical reproduction, scholarly discourse, institutional practice, and professional norms that keep certain components visible and operative. Maintenance also involves deliberate recalibration, amplifying emerging concerns such as accessibility or social justice while resisting collapse into overly narrow definitions of the field. Without maintenance, assemblage fragments; with it, identity remains adaptable <a href="#ref-doan" class="citation-link">(Doan, 2021)</a>.</p>
+
+                        <p><strong>Activation</strong> marks the moments when particular components become central rather than peripheral. Intercultural communication, for example, may exist as one component among many, but it becomes activated when linguistic diversity, transnational circulation, or power asymmetries intensify communicative stakes <a href="#ref-mattson-2017" class="citation-link">(Mattson, 2017)</a>. Activation explains why certain capacities move to the foreground in specific contexts. It emphasizes that assemblage is dynamic: components rise in prominence as conditions demand.</p>
+
+                        <p>Taken together, sustainability, reflection, maintenance, and activation describe dynamic processes through which TPC's collective identity is assembled. What appears stabilized is interrogated through reflection, sustained and recalibrated through maintenance, and foregrounded through activation when contexts intensify its relevance. Through this lens, intercultural TPC is not a separate subfield but a component whose prominence shifts according to communicative conditions.</p>
+                    </section>
+
+                    <section class="article-section">
+                        <h2>Intercultural Activation in Practice</h2>
+                        <p>Scholars in intercultural TPC caution against treating culture as a fixed or easily bounded category. Nancy Small notes that culture in technical communication is better understood as a situated and evolving system of values, symbols, and practices that shape collective identity and communicative expectations <a href="#ref-small" class="citation-link">(Small, 2021)</a>. From this perspective, intercultural communication does not simply involve navigating national differences but responding to dynamic relationships among stakeholders, institutions, and discourses.</p>
+
+                        <p>A review of intercultural TPC scholarship identifies three recurring practices for successful cross-cultural communication: localization, adaptation, and reflection <a href="#ref-small" class="citation-link">(Small, 2021</a>; <a href="#ref-scott" class="citation-link">Scott, 2010)</a>. Localization involves grounding communication in the specific cultural and institutional context of the host community. Adaptation acknowledges that communicative strategies often need revision as new stakeholder relationships and constraints emerge. Reflection requires practitioners to examine their own positionality, ethical responsibilities, and assumptions when working across cultural boundaries — including the ways that organizational and rhetorical norms that feel universal may in fact encode culturally specific expectations <a href="#ref-thatcher" class="citation-link">(Thatcher, 2011)</a>.</p>
+
+                        <p>When read through assemblage, localization responds to contextual specificity, adaptation reconfigures communicative form in relation to stakeholder needs, and reflection interrogates positionality and power. These practices demonstrate how intercultural communication is enacted rather than assumed. They represent the mechanisms through which intercultural components are maintained and activated within broader Technical and Professional Communication practice.</p>
+
+                        <p>The framework developed above does not function only as a conceptual description of the field but as a method for analyzing how communication operates in practice. By treating assemblage as an analytical lens and intercultural TPC as a site of activation, this memo reads each portfolio artifact as a configuration of relationships in which communicative tensions emerge and are negotiated. The following artifacts demonstrate how sustainability, reflection, maintenance, and activation become visible through situated communicative decisions.</p>
+                    </section>
+
+                    <section class="article-section">
+                        <h2>Portfolio as Assemblage in Practice</h2>
+                        <p>My portfolio functions as a site where TPC's collective identity is assembled in practice. Each artifact represents a configuration of stakeholders, institutional constraints, technologies, genres, ethical commitments, and cultural assumptions whose relations produce particular communicative outcomes. Rather than treating intercultural competence as uniformly present across all projects, I analyze how intercultural components become activated within specific configurations. When communicative situations involve border crossing, linguistic diversity, power asymmetries, or transnational circulation, intercultural practices such as localization, adaptive redesign, and reflexive ethical accounting move from background awareness to foreground necessity.</p>
+
+                        <p>Through this lens, my portfolio demonstrates how assemblage operates dynamically: certain components stabilize through repetition and professional norms, while others intensify in response to contextual demands. Read collectively, the artifacts do more than illustrate isolated skills. They provide evidence of how intercultural practice is sustained across different genres and settings, how reflective judgment shapes rhetorical decisions, and how activation occurs when communication must respond to cultural difference, institutional complexity, or communicative risk.</p>
+
+                        <h3>Culinary Chronicles (Technical Editing Project)</h3>
+                        <p>This artifact required not only linguistic precision but cultural awareness in representing recipes, ingredients, and editing conventions. Food, inherently tied to culture, demanded sensitivity to regional expressions and culinary identities. Our editorial work balanced grammatical correctness with cultural authenticity, ensuring that technical consistency did not erase cultural nuance — what scholars describe as "transcultural editing," a process that respects the communicative norms of multiple audiences simultaneously <a href="#ref-canagarajah" class="citation-link">(Canagarajah, 2013</a>; <a href="#ref-palmer" class="citation-link">Palmer, 2013)</a>. The core tension was editorial standardization vs. preserving culturally marked voice: editorial standards and genre conventions represent stabilized elements of TPC practice, but reflection was necessary to prevent those norms from marginalizing culturally specific language, and maintenance occurred through deliberate calibration between institutional expectations of clarity and the preservation of cultural voice. In this configuration, treating editor, author, style guides, and audience expectations as an assemblage made intercultural sensitivity the deciding factor whenever idiom carried identity — prioritizing fidelity to meaning over surface uniformity in multilingual editing.</p>
+
+                        <h3>Car Buying Infographic: Structural Safety and Rhetorical Transparency</h3>
+                        <p>This visual communication artifact demonstrates how intercultural rhetoric can inform technical design. The infographic uses plain language and visual hierarchy to make complex engineering information — such as "crumple zones" and "passenger safety cells" — accessible to non-specialist audiences, framing safety as a universal value that transcends cultural and socio-economic boundaries. This approach reflects the ethical imperative in professional communication: to make life-saving information comprehensible across linguistic and cultural divides. Visual and rhetorical choices do not simply transmit information neutrally; they enact specific assumptions about audience, literacy, and access that must be made legible and interrogated <a href="#ref-palmer" class="citation-link">(Palmer, 2013)</a>. The communicative tension — precision versus accessibility for non-specialists — makes assemblage dynamics visible: engineering terminology, visual hierarchy, and safety discourse function as stabilized components, but intercultural accessibility became the pivot when complex information needed to cross linguistic and socio-economic boundaries. Maintenance occurred through iterative design choices that preserved technical accuracy while adapting presentation for non-specialist audiences, and reflection ensured that clarity did not oversimplify or distort life-saving information — democratizing knowledge without sacrificing accuracy or equity <a href="#ref-agboka" class="citation-link">(Agboka, 2014)</a>.</p>
+
+                        <h3>A to Z Events Website: Inclusive Design for Diverse Audiences</h3>
+                        <p>The A to Z Events website demonstrates the application of audience-centered communication principles within a professional digital environment. Designed to present services clearly and efficiently, the site prioritizes usability, navigational clarity, and visual balance to support a wide range of users, with service descriptions organized for quick comprehension and layout choices that emphasize readability, consistency, and trust <a href="#ref-johnson" class="citation-link">(Johnson, 2004)</a>. Framing technological infrastructure as a dynamic meeting of communicators, modes, and technologies — rather than a passive technical base — clarifies how intercultural concerns can be built into design from the outset <a href="#ref-getto" class="citation-link">(Getto, 2014)</a>. The tension was feature richness vs. ease of use for diverse users: usability, credibility, and accessibility function as stabilized, maintained components reinforced through established design conventions and iterative refinement. Although intercultural activation is less explicit here than in other artifacts, accessibility and clarity operate as background capacities that remain available for activation when user diversity intensifies — treating accessibility as foundational rather than a post-hoc add-on <a href="#ref-oswal" class="citation-link">(Oswal & Palmer, 2021)</a>.</p>
+
+                        <h3>Seminar Paper: Rhetorical Analysis of Ultra-Processed Food Discourse</h3>
+                        <p>My seminar paper, "Nutrient-Fortified or Metabolic Threat: A Rhetorical Analysis of Ultra-Processed Food Discourse," investigates how public health, industry, and advocacy groups communicate differently across cultural and institutional contexts. By comparing discourses from the FDA, PepsiCo, and advocacy organizations, I reveal how communication ethics vary depending on audience, intent, and cultural framing, situating my analysis within the field's ongoing dialogue about the ethics of persuasion and the global health implications of rhetorical practice <a href="#ref-katz" class="citation-link">(Katz, 1992)</a>. Decolonial perspectives on technical communication illuminate how institutional and scientific discourse can reproduce power asymmetries across cultural and economic lines <a href="#ref-agboka" class="citation-link">(Agboka, 2014)</a>. The tension lay in competing institutional rhetorics and incentives: activation occurs when competing rhetorical frameworks — scientific authority, economic incentives, and public health ethics — collide, intensifying interpretive stakes. Reflection becomes central as the analysis exposes how language shapes responsibility and risk perception, while sustainability is visible in the repeated circulation of institutional narratives that stabilize particular understandings of nutrition and accountability, even as they remain open to critique and reconfiguration.</p>
+
+                        <h3>Social Media Activism in Pakistan: A Study of Aristotelian Rhetoric and Multimodal Digital Practices</h3>
+                        <p>This final project paper, from Histories of Rhetoric and Rhetorical Historiography course, examines how political meaning is negotiated in contexts where democratic norms have historically struggled to take root. The study argues that media activists in Pakistan strategically deploy classical appeals on multimodal platforms to cultivate civic awareness, credibility, and participation across fragmented publics. By adapting rhetorical strategies to local linguistic norms, cultural expectations, and digitally constrained environments, activists translate democratic values into communicative forms that resonate with audiences shaped by authoritarian governance and media censorship — revealing rhetoric as a tool for cultural translation rather than abstract persuasion. Critical scholarship on race, rhetoric, and technology emphasizes that such rhetorical assemblages are never ideologically neutral; they operate within and against structures of power that determine whose voices gain visibility and on what terms <a href="#ref-haas" class="citation-link">(Haas, 2012)</a>. Decolonial methodologies extend this insight, insisting that analytical frameworks must be sufficiently flexible to account for the specific historical and geopolitical contexts in which communicative practices take shape <a href="#ref-agboka" class="citation-link">(Agboka, 2014)</a>. The tension between global democratic frames and local risk produces the assemblage in motion: activists, digital platforms, linguistic traditions, state power, and transnational democratic discourse interact to generate contingent rhetorical possibilities. Intercultural activation becomes central as democratic ideals are translated into locally resonant forms shaped by censorship and social risk; maintenance occurs through strategic multimodal adaptation that sustains communicative momentum despite structural constraints, requiring continual recalibration to preserve civic engagement.</p>
+
+                        <p>Across artifacts, I evaluate how communication design choices respond to stakeholder needs, cultural contexts, and ethical considerations. These outcomes demonstrate how intercultural awareness influences rhetorical decisions and audience accessibility. Taken together, the portfolio shows not only what I produced, but also how I learned to make context-sensitive decisions across different communicative environments.</p>
+
+                        <p>Across these artifacts, a consistent pattern emerges: communicative effectiveness depends not on the application of fixed competencies but on the ability to recognize and negotiate tensions within specific assemblages of context, stakeholders, and constraints. Whether balancing standardization and cultural voice, precision and accessibility, usability and inclusivity, or global frameworks and local realities, each project demonstrates how intercultural communication becomes activated when these tensions intensify. Through this lens, assemblage is not simply a theoretical description but a practical method for identifying what is at stake in communication and how decisions shape access, authority, and meaning.</p>
+                    </section>
+
+                    <section class="article-section">
+                        <h2>Contribution to TPC</h2>
+                        <p>Across projects, I operationalize activation as a set of accountable, context-sensitive moves — editing for meaning, simplifying without loss, structuring navigation, reframing institutional claims, and localizing rhetoric — that negotiate access and power without flattening difference. This practice yields a guiding heuristic: name the communicative tension, identify the assemblage components in play, and justify every design decision explicitly in terms of access, equity, and power. Recent systematic reviews of intercultural TPC scholarship confirm that user-centered approaches, collaborative writing practices, and qualitative methodologies attentive to cultural context represent the field's most energetic research directions <a href="#ref-zhang" class="citation-link">(Zhang, Chen, & Xie, 2023)</a>, suggesting that this portfolio's orientation aligns with — and contributes to — emerging disciplinary priorities. Efforts to integrate social justice and intercultural communication into professional communication pedagogy have also demonstrated tangible outcomes when these frameworks move from abstract principle to situated, genre-based action <a href="#ref-baniya" class="citation-link">(Baniya, Edwards, Sano-Franchini, & Walwema, 2022)</a>, precisely the movement that each artifact in this portfolio enacts.</p>
+
+                        <p>The artifacts collectively reveal a structural pattern: when a communicative tension surfaces — between cultural specificity and institutional standardization, between technical accuracy and intercultural accessibility, between democratic aspiration and local constraint — assemblage analysis makes that tension legible, and intercultural practice provides the tools for negotiating it. Editorial choices, design constraints, interface conventions, institutional rhetorics, and platform affordances are not neutral backdrops; they are components whose configuration determines who gains access, whose voice is preserved, and whose knowledge is amplified or suppressed. My portfolio documents the labor of making those determinations visible and accountable across varied professional contexts.</p>
+
+                        <p>Positioning this portfolio within intercultural TPC is not a claim that every artifact achieves intercultural competence equally or that intercultural awareness has been fully mastered. It is instead a claim about orientation: toward communication that treats cultural context as constitutive rather than incidental, that interrogates professional norms for the power relations they encode, and that designs access rather than assumes it. Assemblage provides the theoretical architecture for this orientation by explaining how sustainability, reflection, maintenance, and activation structure the field's collective identity — and how that identity is reproduced, challenged, and extended by practitioners willing to make their decisions answerable to the communities those decisions affect. The work documented here represents one site where that reproduction and challenge occurs.</p>
+                    </section>
+
+                    <section class="article-section">
+                        <h2>References</h2>
+                        <ul class="reference-list">
+                            <li id="ref-agboka">Agboka, G. Y. (2014). Decolonial methodologies: Social justice perspectives in intercultural technical communication research. <em>Journal of Technical Writing and Communication</em>, 44(3), 297–327.</li>
+                            <li id="ref-baniya">Baniya, S., Edwards, J., Sano-Franchini, J., & Walwema, J. (2022). Revisiting SL in TPC through social justice and intercultural frameworks: Findings from survey research. <em>IEEE Transactions on Professional Communication</em>, 65(3).</li>
+                            <li id="ref-canagarajah">Canagarajah, A. S. (2013). <em>Translingual practice: Global Englishes and cosmopolitan relations</em>. Routledge.</li>
+                            <li id="ref-constantinides">Constantinides, H., St. Amant, K., & Kampf, C. (2001). Organizational and intercultural communication: An annotated bibliography. <em>Technical Communication Quarterly</em>, 10(1), 31–59.</li>
+                            <li id="ref-delanda-2006">DeLanda, M. (2006). <em>A new philosophy of society: Assemblage theory and social complexity</em>. Continuum.</li>
+                            <li id="ref-delanda-2016">DeLanda, M. (2016). <em>Assemblage theory</em>. Edinburgh University Press.</li>
+                            <li id="ref-doan">Doan, S. (2021). What are we really teaching? Revisiting technical and professional communication's pedagogical training. In J. Schreiber & L. Melonçon (Eds.), <em>Assembling critical components: A framework for sustaining technical and professional communication</em>. The WAC Clearinghouse and University Press of Colorado.</li>
+                            <li id="ref-dreher">Dreher, K., & Squires, J. S. (2023). Posthumanism and technical communication: Using an assemblage assignment in an interdisciplinary seminar. In <em>Proceedings of the IEEE International Professional Communication Conference (ProComm)</em>.</li>
+                            <li id="ref-getto">Getto, G. (2014). Designing for engagement: Intercultural communication and/as participatory design. <em>Rhetoric, Professional Communication, and Globalization</em>, 5(1), 44–67.</li>
+                            <li id="ref-haas">Haas, A. M. (2012). Race, rhetoric, and technology: Searching for higher ground. <em>Journal of Business and Technical Communication</em>, 26(3), 277–310.</li>
+                            <li id="ref-johnson">Johnson, R. R. (2004). <em>User-centered technology: A rhetorical theory for computers and other mundane artifacts</em>. State University of New York Press.</li>
+                            <li id="ref-johnson-eilola">Johnson-Eilola, J., & Selber, S. A. (2022). Technical communication as assemblage. <em>Technical Communication Quarterly</em>, 31(2), 93–107.</li>
+                            <li id="ref-katz">Katz, S. B. (1992). The ethic of expediency: Classical rhetoric, technology, and the Holocaust. <em>College English</em>, 54(3), 255–275.</li>
+                            <li id="ref-mattson-2015">Mattson, K. (2015). Globalizing the local in the SilkAir MI 185 crash investigation. <em>Rhetoric, Professional Communication, and Globalization</em>, 7(1).</li>
+                            <li id="ref-mattson-2017">Mattson, K. (2017). The death list of Sandarmokh: Mayme Sevander's work as emancipatory international and intercultural professional communication. <em>Rhetoric, Professional Communication, and Globalization</em>, 9(1).</li>
+                            <li id="ref-meloncon">Melonçon, L., & Schreiber, J. (2021). Introduction: Promoting a sustainable collective identity for technical and professional communication. In J. Schreiber & L. Melonçon (Eds.), <em>Assembling critical components: A framework for sustaining technical and professional communication</em>. The WAC Clearinghouse and University Press of Colorado.</li>
+                            <li id="ref-oswal">Oswal, S. K., & Palmer, Z. B. (2021). A critique of disability and accessibility research in technical communication through the models of emancipatory disability research paradigm and participatory scholarship. In J. Schreiber & L. Melonçon (Eds.), <em>Assembling critical components: A framework for sustaining technical and professional communication</em>. The WAC Clearinghouse and University Press of Colorado.</li>
+                            <li id="ref-palmer">Palmer, Z. B. (2013). Cosmopolitanism: Extending our theoretical framework for transcultural technical communication research and teaching. <em>Journal of Technical Writing and Communication</em>, 43(4), 381–401.</li>
+                            <li id="ref-scott">Scott, J. (2010). Intercultural rhetoric in the technical communication curriculum: A review of the literature. <em>Rhetoric, Professional Communication, and Globalization</em>, 1(1), 50–80.</li>
+                            <li id="ref-slack">Slack, J. D., Miller, D. J., & Doak, J. (1993). The technical communicator as author: Meaning, power, authority. <em>Journal of Business and Technical Communication</em>, 7(1), 12–36.</li>
+                            <li id="ref-small">Small, N. (2021). Localize, adapt, reflect. In J. Schreiber & L. Melonçon (Eds.), <em>Assembling critical components: A framework for sustaining technical and professional communication</em>. The WAC Clearinghouse and University Press of Colorado.</li>
+                            <li id="ref-thatcher">Thatcher, B. (2011). <em>Intercultural rhetoric and professional communication: Technological advances and organizational behavior</em>. IGI Global.</li>
+                            <li id="ref-zhang">Zhang, J., Chen, J., & Xie, C. (2023). Extended abstract: A systematic review on the latest trends in intercultural technical and professional communication. In <em>Proceedings of the IEEE International Professional Communication Conference (ProComm)</em>.</li>
+                        </ul>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder (Loaded via JS) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Script to load the Header and Footer templates -->
+    <script src="templates/main.js"></script>
+</body>
+
+</html>
