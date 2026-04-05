@@ -232,32 +232,70 @@
         .research-card p {
             font-size: 14px;
             color: var(--text-gray);
-            margin: 0 0 16px 0;
+            margin: 0 0 24px 0;
             line-height: 1.6;
             flex: 1;
         }
         
-        .research-card:hover p {
+        .card-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: auto;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+        }
+
+        .action-btn.secondary {
+            background: rgba(45, 154, 154, 0.05);
+            color: var(--header-teal);
+            border: 1px solid rgba(45, 154, 154, 0.2);
+        }
+
+        .action-btn.secondary:hover {
+            background: rgba(45, 154, 154, 0.1);
+            color: var(--header-dark-teal);
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .action-btn.primary {
+            background: var(--header-teal);
+            color: #ffffff;
+            border: 1px solid var(--header-teal);
+            box-shadow: 0 2px 8px rgba(45, 154, 154, 0.2);
+        }
+
+        .action-btn.primary:hover {
+            background: #248282;
+            border-color: #248282;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(45, 154, 154, 0.35);
             text-decoration: none;
         }
         
-        .research-card-link {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--header-teal);
-            font-weight: 600;
-            font-size: 14px;
-            margin-top: auto;
+        .action-btn.primary:active {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(45, 154, 154, 0.3);
         }
         
-        .research-card-link svg {
+        .action-btn svg {
             width: 16px;
             height: 16px;
-            transition: transform 0.3s ease;
+            transition: transform 0.2s ease;
         }
-        
-        .research-card:hover .research-card-link svg {
+
+        .action-btn.primary:hover svg {
             transform: translateX(4px);
         }
         
@@ -406,25 +444,36 @@
         <section class="research-section">
             <!-- Research Grid -->
             <div class="research-grid">
-                <a href="social-media-activism.html" class="research-card">
+                
+                <!-- Social Media Activism Card -->
+                <div class="research-card">
                     <span class="research-card-tag">Working Paper</span>
-                    <h3>Social Media Activism in Pakistan: A Study of Aristotelian Rhetoric and Multimodal Digital Practices</h3>
-                    <p>This project analyzes how Pakistani activists use multimodal digital practices to navigate state repression and algorithmic censorship, adapting classical rhetoric for high-risk environments.</p>
-                    <div class="research-card-link">
-                        Read More
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    <h3>Social Media Activism in Pakistan</h3>
+                    <p class="subtitle">Aristotelian Rhetoric and Multimodal Digital Practices</p>
+                    <p>Explores how digital activism leverages classical rhetoric and multimodal practices to empower marginalized groups and resist authoritarianism in a censored public sphere.</p>
+                    <div class="card-actions">
+                        <a href="social-media-activism-meta.html" class="action-btn secondary">Meta Summary</a>
+                        <a href="social-media-activism.html" class="action-btn primary">
+                            Full Paper
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
                     </div>
-                </a>
+                </div>
 
-                <a href="upf-rhetorical-analysis.html" class="research-card">
+                <!-- UPF Rhetorical Analysis Card -->
+                <div class="research-card">
                     <span class="research-card-tag">Seminar Paper</span>
-                    <h3>Rhetorical Analysis of Ultra-Processed Food Discourse</h3>
-                    <p>This project utilizes rhetorical analysis to examine how medical, corporate, advocacy, and regulatory stakeholders construct competing narratives and manage uncertainty around the health risks of ultra-processed foods.</p>
-                    <div class="research-card-link">
-                        Read More
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    <h3>Rhetoric of Risk & Harm</h3>
+                    <p class="subtitle">A Rhetorical Analysis of Nutrient-Fortified Claims in Ultra-Processed Foods</p>
+                    <p>Analyzes how stakeholders use scientific authority, strategic ambiguity, and emotive framing to construct competing narratives about ultra-processed foods.</p>
+                    <div class="card-actions">
+                        <a href="upf-rhetorical-analysis-meta.html" class="action-btn secondary">Meta Summary</a>
+                        <a href="upf-rhetorical-analysis.html" class="action-btn primary">
+                            Full Paper
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
                     </div>
-                </a>
+                </div>
             </div>
 
             <!-- Research Interests -->
