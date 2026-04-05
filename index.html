@@ -420,6 +420,69 @@
             transform: translateX(4px);
         }
 
+        /* ===== ACTION BUTTONS (Research Cards) ===== */
+        .card-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+        }
+
+        .action-btn.secondary {
+            background: rgba(45, 154, 154, 0.05);
+            color: var(--header-teal);
+            border: 1px solid rgba(45, 154, 154, 0.2);
+        }
+
+        .action-btn.secondary:hover {
+            background: rgba(45, 154, 154, 0.1);
+            color: var(--header-dark-teal);
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .action-btn.primary {
+            background: var(--header-teal);
+            color: #ffffff;
+            border: 1px solid var(--header-teal);
+            box-shadow: 0 2px 8px rgba(45, 154, 154, 0.2);
+        }
+
+        .action-btn.primary:hover {
+            background: #248282;
+            border-color: #248282;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(45, 154, 154, 0.35);
+            text-decoration: none;
+        }
+        
+        .action-btn.primary:active {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(45, 154, 154, 0.3);
+        }
+        
+        .action-btn svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.2s ease;
+        }
+
+        .action-btn.primary:hover svg {
+            transform: translateX(4px);
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             /* Hero responsive - stack to single column */
@@ -613,7 +676,7 @@
 
                 <div style="max-width: 800px; margin: 0 auto;">
                     <div class="portfolio-grid">
-                        <a href="social-media-activism.html" class="portfolio-card">
+                        <div class="portfolio-card" style="cursor: default;">
                             <div class="portfolio-card-image" style="background: linear-gradient(135deg, #fef3c7 0%, #fef9e9 100%);">
                                 <span class="placeholder-icon">📝</span>
                             </div>
@@ -621,16 +684,17 @@
                                 <span class="portfolio-card-tag" style="background: #fef3c7; color: #92400e;">Working Paper</span>
                                 <h3>Social Media Activism in Pakistan: A Study of Aristotelian Rhetoric and Multimodal Digital Practices</h3>
                                 <p>This project analyzes how Pakistani activists use multimodal digital practices to navigate state repression and algorithmic censorship, adapting classical rhetoric for high-risk environments.</p>
-                                <div class="portfolio-card-link">
-                                    Read Paper
-                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                    </svg>
+                                <div class="card-actions">
+                                    <a href="social-media-activism-meta.html" class="action-btn secondary">Meta Summary</a>
+                                    <a href="social-media-activism.html" class="action-btn primary">
+                                        Full Paper
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                    </a>
                                 </div>
                             </div>
-                        </a>
+                        </div>
 
-                        <a href="upf-rhetorical-analysis.html" class="portfolio-card">
+                        <div class="portfolio-card" style="cursor: default;">
                             <div class="portfolio-card-image" style="background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);">
                                 <span class="placeholder-icon">📊</span>
                             </div>
@@ -638,14 +702,15 @@
                                 <span class="portfolio-card-tag" style="background: #dbeafe; color: #1e40af;">Seminar Paper</span>
                                 <h3>Rhetorical Analysis of Ultra-Processed Food Discourse</h3>
                                 <p>This project utilizes rhetorical analysis to examine how medical, corporate, advocacy, and regulatory stakeholders construct competing narratives and manage uncertainty around the health risks of ultra-processed foods.</p>
-                                <div class="portfolio-card-link">
-                                    Read Paper
-                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                    </svg>
+                                <div class="card-actions">
+                                    <a href="upf-rhetorical-analysis-meta.html" class="action-btn secondary">Meta Summary</a>
+                                    <a href="upf-rhetorical-analysis.html" class="action-btn primary">
+                                        Full Paper
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                    </a>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
 
