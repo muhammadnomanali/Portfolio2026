@@ -10,13 +10,15 @@
                     <!-- Combined Work Dropdown -->
                     <div class="dropdown">
                         <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
-                            PORTFOLIO <span class="arrow">▼</span>
+                            WORK <span class="arrow">▼</span>
                         </button>
                         <div class="dropdown-content">
-                    <a href="Intercultural Practice in TPC.html">Memo</a>                            
+                            
+                            <a href="intercultural-practice.html">Memo</a>
+
                             <!-- Artifacts Nested Dropdown -->
                             <div class="nested-dropdown">
-                                <a href="artifacts.html">Artifacts and Design <span class="arrow right-arrow">▶</span></a>
+                                <a href="artifacts.html">Artifacts <span class="arrow right-arrow">▶</span></a>
                                 <div class="nested-dropdown-content">
                                     <a href="car-safety-infographic.html">Car Safety Infographic</a>
                                     <a href="recipe-book.html">Culinary Chronicles</a>
@@ -28,8 +30,23 @@
                             <div class="nested-dropdown">
                                 <a href="research.html">Research <span class="arrow right-arrow">▶</span></a>
                                 <div class="nested-dropdown-content">
-                                    <a href="social-media-activism.html">Social Media Activism</a>
-                                    <a href="upf-rhetorical-analysis.html">UPF Rhetorical Analysis</a>
+                                    
+                                    <div class="nested-dropdown">
+                                        <a href="javascript:void(0)">Social Media Activism <span class="arrow right-arrow">▶</span></a>
+                                        <div class="nested-dropdown-content">
+                                            <a href="social-media-activism-meta.html">Meta</a>
+                                            <a href="social-media-activism.html">Research Paper</a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="nested-dropdown">
+                                        <a href="javascript:void(0)">UPF Rhetorical Analysis <span class="arrow right-arrow">▶</span></a>
+                                        <div class="nested-dropdown-content">
+                                            <a href="upf-rhetorical-analysis-meta.html">Meta</a>
+                                            <a href="upf-rhetorical-analysis.html">Research Paper</a>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
 
@@ -154,7 +171,7 @@
             top: 100%;
             left: 0;
             margin-top: 2px;
-            overflow: visible; /* Must be visible for nested dropdowns to pop out */
+            overflow: visible;
             border: 1px solid var(--border-color, #e5e5e5);
         }
 
@@ -196,12 +213,12 @@
             left: 100%;
             top: -1px;
             background-color: #ffffff;
-            min-width: 250px;
+            min-width: 260px; /* Widened slightly to fit the longer paper titles */
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
             z-index: 2;
             border-radius: 8px;
             border: 1px solid var(--border-color, #e5e5e5);
-            overflow: hidden;
+            overflow: visible; /* Changed to visible to allow 3rd level popouts */
             margin-left: 2px;
         }
 
@@ -215,10 +232,21 @@
             text-decoration: none;
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
+        
+        .nested-dropdown-content a:first-child {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .nested-dropdown-content a:last-child {
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border-bottom: none;
+        }
 
         /* Desktop Hover Actions */
         @media (min-width: 769px) {
-            .nested-dropdown:hover .nested-dropdown-content {
+            .nested-dropdown:hover > .nested-dropdown-content {
                 display: block;
             }
         }
@@ -300,6 +328,10 @@
                 font-size: 13px;
                 border-left: 1px solid rgba(255,255,255,0.2);
                 border-bottom: none;
+            }
+            .nested-dropdown-content .nested-dropdown-content a {
+                padding-left: 24px;
+                border-left: 2px solid rgba(255,255,255,0.3);
             }
             .nested-dropdown-content a:hover {
                 color: #ffffff !important;
