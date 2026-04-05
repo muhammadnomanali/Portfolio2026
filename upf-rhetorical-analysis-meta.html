@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rhetorical Analysis of Ultra-Processed Food Discourse - Noman Ali</title>
+    <meta name="description" content="Rhetorical analysis of how stakeholders construct competing narratives around the health risks of ultra-processed foods." />
+
+    <style>
+         :root {
+            --bg: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-gray: #666666;
+            --text-light: #999999;
+            --brand: #16a34a;
+            --header-teal: #2d9a9a;
+            --border-color: #e5e5e5;
+            --card-bg: #f9f9f9;
+            --radius: 12px;
+            --max-width: 1200px;
+            --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        html {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            width: 100%;
+        }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-dark);
+            background-color: var(--bg);
+            line-height: 1.6;
+            position: relative;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .skip-link {
+            position: absolute;
+            left: -999px;
+            background: var(--brand);
+            color: white;
+            padding: 10px;
+            z-index: 100;
+        }
+        
+        .skip-link:focus {
+            left: 16px;
+            top: 16px;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        /* Main content */
+        main {
+            flex: 1;
+            padding-bottom: 80px;
+        }
+        
+        /* ===== PAGE BANNER / HERO ===== */
+        .project-hero {
+            background: linear-gradient(135deg, #e0f2f1 0%, #f4fbfb 100%);
+            padding: 100px 20px 80px;
+            position: relative;
+            border-bottom: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        /* Subtle white fade to make text ultra-readable over the pattern */
+        .project-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(45, 154, 154, 0.1) 2px, transparent 2px);
+            background-size: 24px 24px;
+            z-index: 0;
+        }
+        
+        .project-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .project-hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 20px 0 20px 0;
+            color: var(--text-dark);
+            font-family: Georgia, serif;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        
+        .project-hero .subtitle {
+            font-size: 20px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin: 0;
+            max-width: 800px;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            display: inline-flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 13px;
+            color: var(--text-gray);
+            background: rgba(255, 255, 255, 0.8);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .breadcrumb a {
+            color: var(--header-teal);
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--header-dark-teal);
+            text-decoration: none;
+        }
+        
+        .breadcrumb .separator {
+            color: var(--text-light);
+        }
+        
+        .breadcrumb .current {
+            color: var(--text-dark);
+        }
+
+        /* Keywords Bullet List */
+        .keywords-bullet-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 24px;
+            list-style: none;
+            padding: 0;
+            margin: 24px 0 0 0;
+        }
+
+        .keywords-bullet-list li {
+            font-size: 15px;
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .keywords-bullet-list li::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--header-teal);
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Article Content */
+        .project-main {
+            padding: 60px 0;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ffffff;
+            color: var(--header-teal);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+            margin-bottom: 40px;
+        }
+
+        .btn-back:hover {
+            color: var(--header-dark-teal);
+            transform: translateX(-4px);
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        
+        .btn-back svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .citation-link {
+            color: var(--brand);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            border-bottom: 1px dotted var(--brand);
+        }
+
+        .citation-link:hover {
+            color: var(--header-dark-teal);
+            border-bottom-color: var(--header-dark-teal);
+        }
+
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .project-image {
+            width: 100%;
+            border-radius: 12px;
+            margin: 10px 0 50px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-section {
+            margin: 0 0 50px 0;
+        }
+
+        .article-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+            color: var(--text-dark);
+            font-family: Georgia, serif;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .article-section p {
+            font-size: 17px;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin: 0 0 20px 0;
+        }
+
+        /* Hero Button */
+        .btn-hero {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--header-teal);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            margin-top: 24px;
+            border: none;
+            box-shadow: 0 2px 8px rgba(45, 154, 154, 0.2);
+        }
+
+        .btn-hero:hover {
+            background: #248282;
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(45, 154, 154, 0.35);
+            text-decoration: none;
+        }
+        
+        .btn-hero:active {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(45, 154, 154, 0.3);
+        }
+
+        /* References section (Hanging Indent) */
+        .reference-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .reference-list li {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            padding-left: 36px;
+            text-indent: -36px;
+            transition: background-color 0.5s ease;
+            border-radius: 4px;
+        }
+
+        .reference-list li:target {
+            background-color: rgba(45, 154, 154, 0.15);
+            box-shadow: 0 0 0 8px rgba(45, 154, 154, 0.15);
+        }
+        
+        @media (max-width: 768px) {
+            .project-hero {
+                padding: 80px 20px 60px;
+            }
+            .project-hero h1 {
+                font-size: 36px;
+            }
+            .project-hero .subtitle {
+                font-size: 18px;
+            }
+            .breadcrumb {
+                font-size: 12px;
+                margin-bottom: 20px;
+            }
+            .article-section h2 {
+                font-size: 24px;
+            }
+            .article-section p {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+            .project-hero {
+                padding: 60px 16px 40px;
+            }
+            .project-hero h1 {
+                font-size: 28px;
+            }
+            .project-hero .subtitle {
+                font-size: 16px;
+            }
+            .breadcrumb {
+                font-size: 12px;
+                margin-bottom: 16px;
+            }
+            .project-main {
+                padding: 40px 0;
+            }
+            .article-section h2 {
+                font-size: 22px;
+            }
+            .article-section p {
+                font-size: 15px;
+            }
+            .reference-list li {
+                font-size: 14px;
+                padding-left: 24px;
+                text-indent: -24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header Placeholder (Loaded via JS) -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Hero Section -->
+        <section class="project-hero">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="separator">/</span>
+                    <a href="research.html">Research</a>
+                    <span class="separator">/</span>
+                    <span style="color: var(--text-gray);">Rhetoric of Risk & Harm</span>
+                    <span class="separator">/</span>
+                    <span class="current">Meta</span>
+                </nav>
+                
+                <h1>Rhetorical Analysis of Ultra-Processed Food Discourse</h1>
+                <p class="subtitle">
+                    This project utilizes rhetorical analysis to examine how medical, corporate, advocacy, and regulatory stakeholders construct competing narratives and manage uncertainty around the health risks of ultra-processed foods.
+                </p>
+                
+                <ul class="keywords-bullet-list">
+                    <li>Rhetorical Analysis</li>
+                    <li>Risk Communication</li>
+                    <li>Discourse Ecology</li>
+                    <li>Intercultural Communication</li>
+                </ul>
+
+                <a href="upf-paper.html" class="btn-hero">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg> Read Full Research Paper
+                </a>
+            </div>
+        </section>
+
+        <!-- Article Content -->
+        <div class="project-main">
+            <div class="container">
+                <div class="article-content">
+
+                    <a href="research.html" class="btn-back">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg> Back to Research
+                    </a>
+
+                    <section class="article-section">
+                        <h2>Project Description</h2>
+                        <p>This research project, titled “Nutrient-Fortified or Metabolic Threat? A Rhetorical Analysis of Ultra-Processed Food Discourse,” investigates how various stakeholders frame the health risks of ultra-processed foods (UPFs) through strategic rhetoric rather than neutral scientific explanation. Developed for Dr. Susan Youngblood’s course on the rhetoric of risk and harm, the project explores the gap between public messaging about UPFs and their actual health implications. By analyzing the communicative practices of medical experts, corporate food actors, advocacy groups, and regulators, the paper demonstrates how these entities construct competing narratives. Ultimately, the project highlights how public perception, policy direction, and consumer behavior regarding food and health are actively shaped by these interacting, often conflicting, discourses.</p>
+                    </section>
+
+                    <section class="article-section">
+                        <h2>Rhetorical and Technical Decisions</h2>
+                        <p>Methodologically, I made the rhetorical decision to employ a qualitative approach focused on discourse rather than attempting to determine the objective scientific safety of UPFs. To execute this, I selected a diverse range of artifacts across different discourse communities—including medical commentary, PepsiCo’s Nutrition Forward campaign, advocacy materials from the Center for Food Safety, and FDA guidance on “healthy” labeling. This selection allowed me to identify and contrast specific rhetorical strategies, such as the industry's use of strategic ambiguity and focus on affordability, versus advocacy groups' use of emotive framing and systemic urgency.</p>
+                        
+                        <p>By analyzing these texts, I chose to highlight how uncertainty is managed rhetorically in public health debates. Furthermore, my technical decisions in structuring the analysis emphasized how food communication is deeply intercultural—shaped not just by data, but by issues of class, trust, and public values. Demonstrating that public understanding of UPFs emerges not from one single source of truth but from a struggle among competing rhetorical framings positions my work firmly within the scope of technical and professional communication (TPC).</p>
+                    </section>
+
+                    <section class="article-section">
+                        <h2>Theoretical Connections</h2>
+                        <p>To ground this analysis, I relied on <a href="#ref-gross" class="citation-link">Gross’s (1990)</a> foundational premise that public controversies are constituted through discourse rather than merely communicated by it. This principle guided my examination of how the UPF debate is actively constructed by its participants. When analyzing how stakeholders present, soften, or intensify the issue, I utilized <a href="#ref-covello" class="citation-link">Covello and Sandman's (2001)</a> framework of risk communication, which clarifies that scientific uncertainty is frequently managed rhetorically rather than resolved through objective data.</p>
+
+                        <p>As I synthesized the competing narratives of industry, advocacy, and regulation, <a href="#ref-foucault" class="citation-link">Foucault’s (1972)</a> theories on the productive nature of discourse helped explain how knowledge about UPFs is not neutral, but heavily shaped by underlying systems of power and institutional authority. To situate this research within my broader TPC portfolio, I applied <a href="#ref-spinuzzi" class="citation-link">Spinuzzi's (2008)</a> concept of assemblage, framing the UPF debate as a meaning-making process produced through the complex interactions of various institutions, documents, technologies, and audiences. Finally, to address the intercultural aspects of food communication, I integrated <a href="#ref-trauth" class="citation-link">Trauth’s (2015)</a> research on community literacies and "natural" labels, which provided a theoretical basis for understanding how different communities unevenly interpret nutritional noise and health messaging.</p>
+                    </section>
+
+                    <section class="article-section">
+                        <h2>References</h2>
+                        <ul class="reference-list">
+                            <li id="ref-covello">Covello, V. T., & Sandman, P. M. (2001). Risk communication: Evolution and revolution. In <em>Solutions to an environment in peril</em> (pp. 164–178). Johns Hopkins University Press.</li>
+                            <li id="ref-foucault">Foucault, M. (1972). <em>The archaeology of knowledge</em>. Pantheon Books.</li>
+                            <li id="ref-gross">Gross, A. G. (1990). <em>The rhetoric of science</em>. Harvard University Press.</li>
+                            <li id="ref-spinuzzi">Spinuzzi, C. (2008). Toward a theory of genre ecology. <em>Technical Communication Quarterly</em>, 17(3), 257–274.</li>
+                            <li id="ref-trauth">Trauth, E. (2015). Nutritional noise: Community literacies and the movement against foods labeled as “natural.”</li>
+                        </ul>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder (Loaded via JS) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Script to load the Header and Footer templates -->
+    <script src="templates/main.js"></script>
+</body>
+
+</html>
