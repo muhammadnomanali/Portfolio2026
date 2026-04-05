@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Social Media Activism in Pakistan: A Study of Aristotelian Rhetoric and Multimodal Digital Practices</title>
+    <meta name="description" content="Research paper on digital activism, classical rhetoric, and multimodal practices in Pakistan." />
+
+    <style>
+         :root {
+            --bg: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-gray: #666666;
+            --text-light: #999999;
+            --brand: #16a34a;
+            --header-teal: #2d9a9a;
+            --border-color: #e5e5e5;
+            --card-bg: #f9f9f9;
+            --radius: 12px;
+            --max-width: 1200px;
+            --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        html {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            width: 100%;
+        }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-dark);
+            background-color: var(--bg);
+            line-height: 1.6;
+            position: relative;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .skip-link {
+            position: absolute;
+            left: -999px;
+            background: var(--brand);
+            color: white;
+            padding: 10px;
+            z-index: 100;
+        }
+        
+        .skip-link:focus {
+            left: 16px;
+            top: 16px;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        /* Main content */
+        main {
+            flex: 1;
+            padding-bottom: 80px;
+        }
+        
+        /* ===== PAGE BANNER / HERO ===== */
+        .project-hero {
+            background: linear-gradient(135deg, #e0f2f1 0%, #f4fbfb 100%);
+            padding: 100px 20px 80px;
+            position: relative;
+            border-bottom: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        /* Subtle white fade to make text ultra-readable over the pattern */
+        .project-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(45, 154, 154, 0.1) 2px, transparent 2px);
+            background-size: 24px 24px;
+            z-index: 0;
+        }
+        
+        .project-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .project-hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 20px 0 20px 0;
+            color: var(--text-dark);
+            font-family: Georgia, serif;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        
+        .project-hero .subtitle {
+            font-size: 20px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin: 0;
+            max-width: 800px;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            display: inline-flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 13px;
+            color: var(--text-gray);
+            background: rgba(255, 255, 255, 0.8);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .breadcrumb a {
+            color: var(--header-teal);
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--header-dark-teal);
+            text-decoration: none;
+        }
+        
+        .breadcrumb .separator {
+            color: var(--text-light);
+        }
+        
+        .breadcrumb .current {
+            color: var(--text-dark);
+        }
+
+        /* Keywords Bullet List */
+        .keywords-bullet-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 24px;
+            list-style: none;
+            padding: 0;
+            margin: 24px 0 0 0;
+        }
+
+        .keywords-bullet-list li {
+            font-size: 15px;
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .keywords-bullet-list li::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--header-teal);
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Article Content */
+        .project-main {
+            padding: 60px 0;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ffffff;
+            color: var(--header-teal);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+            margin-bottom: 40px;
+        }
+
+        .btn-back:hover {
+            color: var(--header-dark-teal);
+            transform: translateX(-4px);
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        
+        .btn-back svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .citation-link {
+            color: var(--brand);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            border-bottom: 1px dotted var(--brand);
+        }
+
+        .citation-link:hover {
+            color: var(--header-dark-teal);
+            border-bottom-color: var(--header-dark-teal);
+        }
+
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-section {
+            margin: 0 0 50px 0;
+        }
+
+        .article-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+            color: var(--text-dark);
+            font-family: Georgia, serif;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .article-section p {
+            font-size: 17px;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin: 0 0 20px 0;
+        }
+
+        /* Hero Button */
+        .btn-hero {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--header-teal);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            margin-top: 24px;
+            border: none;
+            box-shadow: 0 2px 8px rgba(45, 154, 154, 0.2);
+        }
+
+        .btn-hero:hover {
+            background: #248282;
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(45, 154, 154, 0.35);
+            text-decoration: none;
+        }
+        
+        .btn-hero:active {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(45, 154, 154, 0.3);
+        }
+
+        /* References section (Hanging Indent) */
+        .reference-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .reference-list li {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            padding-left: 36px;
+            text-indent: -36px;
+            transition: background-color 0.5s ease;
+            border-radius: 4px;
+        }
+
+        .reference-list li:target {
+            background-color: rgba(45, 154, 154, 0.15);
+            box-shadow: 0 0 0 8px rgba(45, 154, 154, 0.15);
+        }
+        
+        @media (max-width: 768px) {
+            .project-hero {
+                padding: 80px 20px 60px;
+            }
+            .project-hero h1 {
+                font-size: 36px;
+            }
+            .project-hero .subtitle {
+                font-size: 18px;
+            }
+            .breadcrumb {
+                font-size: 12px;
+                margin-bottom: 20px;
+            }
+            .article-section h2 {
+                font-size: 24px;
+            }
+            .article-section p {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+            .project-hero {
+                padding: 60px 16px 40px;
+            }
+            .project-hero h1 {
+                font-size: 28px;
+            }
+            .project-hero .subtitle {
+                font-size: 16px;
+            }
+            .breadcrumb {
+                font-size: 12px;
+                margin-bottom: 16px;
+            }
+            .project-main {
+                padding: 40px 0;
+            }
+            .article-section h2 {
+                font-size: 22px;
+            }
+            .article-section p {
+                font-size: 15px;
+            }
+            .reference-list li {
+                font-size: 14px;
+                padding-left: 24px;
+                text-indent: -24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header Placeholder (Loaded via JS) -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Hero Section -->
+        <section class="project-hero">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="separator">/</span>
+                    <a href="research.html">Research</a>
+                    <span class="separator">/</span>
+                    <span style="color: var(--text-gray);">Social Media Activism in Pakistan</span>
+                    <span class="separator">/</span>
+                    <span class="current">Meta</span>
+                </nav>
+                
+                <h1>Social Media Activism in Pakistan: A Study of Aristotelian Rhetoric and Multimodal Digital Practices</h1>
+                <p class="subtitle">
+                    This project analyzes how Pakistani activists use multimodal digital practices to navigate state repression and algorithmic censorship, adapting classical rhetoric for high-risk environments.
+                </p>
+                
+                <ul class="keywords-bullet-list">
+                    <li>Rhetorical Historiography</li>
+                    <li>Social Media Activism</li>
+                    <li>Digital Rhetoric</li>
+                    <li>Counterstory</li>
+                    <li>Algorithmic Mediation</li>
+                </ul>
+
+                <a href="social-media-activism-paper.html" class="btn-hero">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg> Read Full Research Paper
+                </a>
+            </div>
+        </section>
+
+        <!-- Article Content -->
+        <div class="project-main">
+            <div class="container">
+                <div class="article-content">
+
+                    <a href="research.html" class="btn-back">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg> Back to Research
+                    </a>
+
+                    <section class="article-section">
+                        <h2>Project Description</h2>
+                        <p>This project investigates how Pakistani social media activists utilize multimodal digital practices to contest state narratives and navigate platform censorship. Originally developed for Dr. Leigh Gruwell’s course on the histories of rhetoric, the project examines the utility and limitations of classical Aristotelian rhetoric in contemporary, high-risk digital environments. By analyzing YouTube and Twitter posts, the project highlights how activists construct credibility under suspicion, compress complex claims into memorable visual cues, and assemble evidence to counter official state claims. Ultimately, the project demonstrates that social media in Pakistan operates not merely as a communication tool, but as a critical site for rhetorical self-construction and historical witnessing under severe institutional and algorithmic pressure.</p>
+                    </section>
+
+                    <section class="article-section">
+                        <h2>Rhetorical and Technical Decisions</h2>
+                        <p>Methodologically, the project triangulates a classical lens, a marginalized counterstory framework, and a digital/algorithmic reality. While <a href="#ref-aristotle" class="citation-link">Aristotle (2007)</a> provides a baseline vocabulary for persuasion (ethos, pathos, logos), <a href="#ref-hill" class="citation-link">Hill (1958)</a> reminds us of the specific civic assumptions underlying classical rhetoric—assumptions of stable forums and reciprocal debate that fail in contexts of extreme censorship. Therefore, my technical decision to use Aristotle was not to recenter the canon, but to establish a point of productive strain to show how traditional methods must adapt to modern digital constraints.</p>
+
+                        <p>I made the rhetorical choice to focus heavily on publicly visible signals of algorithmic suppression, demonstrating how activists engineer redundancy through multimodal design (e.g., using stitched citations or platform switching when a video is removed). However, acknowledging the limitations of my approach was a crucial ethical decision. Relying strictly on surface texts risks obscuring private organizing channels and the distinct dangers faced by women and lower-bandwidth communities. Recognizing these limits directly answers <a href="#ref-royster" class="citation-link">Royster’s (2000)</a> mandate that methodological choices are inseparable from ethical responsibility. Moving forward, this project suggests that writing histories of rhetoric requires keeping the canon in view, centering marginalized voices, and critically framing the platform itself.</p>
+                    </section>
+
+                    <section class="article-section">
+                        <h2>Theoretical Connections</h2>
+                        <p>To situate this work within the broader fields of rhetorical historiography and cultural rhetorics, I moved beyond classical frameworks to embrace counterstory and borderland theories. As <a href="#ref-martinez" class="citation-link">Martinez (2020)</a> articulates, counterstory provides a critical methodology for reading activist feeds as real-time interventions against a Master Narrative that seeks to frame dissent as chaos or foreign manipulation. This historiographic lens reveals the platform feed as a scene of active historical writing. Furthermore, <a href="#ref-anzaldua" class="citation-link">Anzaldúa’s (1987)</a> concept of the borderlands accurately names the in-between condition of Pakistani activists who must constantly navigate between platform moderation rules and state laws, as well as between global legibility and local danger.</p>
+
+                        <p>To ensure my analytical distance did not reproduce the marginalization I sought to critique, I applied <a href="#ref-royster" class="citation-link">Royster’s (2000)</a> ethic of care, which guided my theoretical choices regarding evidence and tone. <a href="#ref-cushman" class="citation-link">Cushman et al.'s (2019)</a> call for pluriversal rhetorics further pushed the project to avoid measuring Pakistani digital practices against Western norms. Instead, this framework allowed me to recognize localized tactics—such as code-switching and intertextual Quranic appeals—as rhetorically complete on their own terms.</p>
+
+                        <p>Within the realm of digital rhetoric, <a href="#ref-eyman" class="citation-link">Eyman (2015)</a> clarifies that persuasion is fundamentally shaped by interfaces, infrastructures, and protocols. Building on this, <a href="#ref-mckee" class="citation-link">McKee and Porter’s (2017)</a> work on digital media ethics helped me account for the layered governance of platform moderation and state surveillance that makes rhetorical uptake so precarious. Furthermore, <a href="#ref-boyle" class="citation-link">Boyle et al. (2018)</a> encouraged me to treat the digital not as an isolated sphere, but as deeply entangled with material risks such as detention and disappearance, thereby explaining activists' preference for short videos and mirrored uploads. Finally, <a href="#ref-hart-davidson" class="citation-link">Hart-Davidson’s (2020)</a> concept of writing with robots provided the necessary vocabulary to analyze algorithms as non-human rhetorical actors that sort, throttle, and erase political speech.</p>
+                    </section>
+
+                    <section class="article-section">
+                        <h2>References</h2>
+                        <ul class="reference-list">
+                            <li id="ref-anzaldua">Anzaldúa, G. (1987). <em>Borderlands/La Frontera: The new mestiza</em>. Aunt Lute Books.</li>
+                            <li id="ref-aristotle">Aristotle. (2007). <em>On rhetoric: A theory of civic discourse</em> (G. A. Kennedy, Trans., 2nd ed.). Oxford University Press.</li>
+                            <li id="ref-boyle">Boyle, C., Brown, J., & Ceraso, S. (2018). The digital: Rhetoric behind and beyond the screen. In C. E. Ball & D. M. Hawk (Eds.), <em>The Routledge handbook of digital writing and rhetoric</em> (pp. 43–57). Routledge.</li>
+                            <li id="ref-cushman">Cushman, E., Keith, W. M., & Wilder, L. (2019). Delinking: Toward pluriversal rhetorics. <em>Rhetoric Society Quarterly</em>, 49(3), 221–235.</li>
+                            <li id="ref-eyman">Eyman, D. (2015). <em>Digital rhetoric: Theory, method, practice</em>. University of Michigan Press.</li>
+                            <li id="ref-hart-davidson">Hart-Davidson, W. (2020). Writing with robots and other curiosities. In <em>Rhetorical accessibility and the digital</em>.</li>
+                            <li id="ref-hill">Hill, F. (1958). The rhetoric of Aristotle: Translation and scholarship. <em>Quarterly Journal of Speech</em>, 44(2), 144–154.</li>
+                            <li id="ref-martinez">Martinez, A. Y. (2020). Core-coursing counterstory: On master narrative histories and a counterstory methodology. <em>College Composition and Communication</em>, 71(2), 243–268.</li>
+                            <li id="ref-mckee">McKee, H. A., & Porter, J. E. (2017). <em>Professional communication and network interaction: A rhetorical and ethical approach</em>. Routledge.</li>
+                            <li id="ref-royster">Royster, J. J. (2000). <em>Traces of a stream: Literacy and social change among African American women</em>. University of Pittsburgh Press.</li>
+                        </ul>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder (Loaded via JS) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Script to load the Header and Footer templates -->
+    <script src="templates/main.js"></script>
+</body>
+
+</html>
